@@ -17,6 +17,9 @@ builds:
 
 archives:
   - format: tar.gz
+    files:
+      - setup.sh
+      - setup.bat
     name_template: >-
       {{ .ProjectName }}_
       {{- title .Os }}_
