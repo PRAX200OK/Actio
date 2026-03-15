@@ -5,8 +5,8 @@ const (
 	DirName = "actio"
 
 	// MainDoc is the top-level Actio documentation file.
-	MainDoc = "ACTIO.md"
+	MainDoc = "ENTRYPOINT.yaml"
 
 	// IndexFile is the Actio index manifest.
-	IndexFile = "index.yaml"
+	IndexFile = "router.yaml"
 )
