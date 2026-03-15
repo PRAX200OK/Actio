@@ -8,11 +8,11 @@ const config = {
   tagline: 'AI-sidecar framework for deterministic context. Reduce hallucinations, enforce architecture.',
   favicon: 'img/favicon.svg',
 
-  url: 'https://actio.dev',
-  baseUrl: '/',
+  url: 'https://PRAX200OK.github.io',
+  baseUrl: '/Actio/',
 
-  organizationName: 'actio',
-  projectName: 'actio',
+  organizationName: 'PRAX200OK',
+  projectName: 'Actio',
 
   onBrokenLinks: 'throw',
   markdown: {
@@ -57,7 +57,7 @@ const config = {
           { to: '/docs/getting-started/installation', label: 'Getting Started', position: 'left' },
           { to: '/docs/cli/create', label: 'CLI Reference', position: 'left' },
           {
-            href: 'https://github.com/act-framework/act',
+            href: 'https://github.com/PRAX200OK/Actio',
             label: 'GitHub',
             position: 'right',
           },
@@ -78,11 +78,11 @@ const config = {
           {
             title: 'Community',
             items: [
-              { label: 'GitHub', href: 'https://github.com/act-framework/act' },
+              { label: 'GitHub', href: 'https://github.com/PRAX200OK/Actio' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ACT Framework. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Actio Framework. Built with Docusaurus.`,
       },
       prism: {
         theme: themes.github,
