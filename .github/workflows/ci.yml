@@ -69,8 +69,9 @@ jobs:
 
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v5
+      working-directory: ./actio
       with:
         version: latest
-        args: release --clean
+        args: release --clean --config ../.goreleaser.yml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
