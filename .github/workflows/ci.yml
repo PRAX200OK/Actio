@@ -70,6 +70,7 @@ jobs:
     - name: Run GoReleaser
       run: |
         curl -sL https://install.goreleaser.com/github.com/goreleaser/goreleaser.sh | bash
+        export PATH="$HOME/.goreleaser:$PATH"
         cd actio
         goreleaser release --clean --config ../.goreleaser.yml
       env:
