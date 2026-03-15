@@ -1,6 +1,6 @@
 # Build customization
 builds:
-  - main: ./actio/main.go
+  - main: ./main.go
     binary: actio
     goos:
       - windows
