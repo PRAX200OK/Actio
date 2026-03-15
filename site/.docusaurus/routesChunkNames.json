@@ -1,0 +1,94 @@
+{
+  "/docs-a25": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/docs-bea": {
+    "__comp": "a7bd4aaa",
+    "__props": "0058b4c6"
+  },
+  "/docs-989": {
+    "__comp": "a94703ab"
+  },
+  "/docs/cli/create-7a2": {
+    "__comp": "17896441",
+    "content": "eceb5f47"
+  },
+  "/docs/cli/doctor-e0c": {
+    "__comp": "17896441",
+    "content": "8ba30265"
+  },
+  "/docs/cli/init-7e9": {
+    "__comp": "17896441",
+    "content": "43ea9c74"
+  },
+  "/docs/cli/mcp-879": {
+    "__comp": "17896441",
+    "content": "eeddcf2d"
+  },
+  "/docs/cli/validate-cc0": {
+    "__comp": "17896441",
+    "content": "f0e95c59"
+  },
+  "/docs/cli/version-6e5": {
+    "__comp": "17896441",
+    "content": "7f192374"
+  },
+  "/docs/concepts/domains-813": {
+    "__comp": "17896441",
+    "content": "b09be008"
+  },
+  "/docs/concepts/index-yaml-365": {
+    "__comp": "17896441",
+    "content": "a713916c"
+  },
+  "/docs/concepts/rules-and-tasks-b32": {
+    "__comp": "17896441",
+    "content": "55be8792"
+  },
+  "/docs/concepts/sidecar-4cb": {
+    "__comp": "17896441",
+    "content": "a7133f50"
+  },
+  "/docs/getting-started/create-project-550": {
+    "__comp": "17896441",
+    "content": "80a63cae"
+  },
+  "/docs/getting-started/installation-f1f": {
+    "__comp": "17896441",
+    "content": "54f44165"
+  },
+  "/docs/getting-started/quick-start-835": {
+    "__comp": "17896441",
+    "content": "588bd741"
+  },
+  "/docs/guides/mcp-integration-a42": {
+    "__comp": "17896441",
+    "content": "b9b89239"
+  },
+  "/docs/guides/plugins-86a": {
+    "__comp": "17896441",
+    "content": "bb350c59"
+  },
+  "/docs/guides/schema-validation-99c": {
+    "__comp": "17896441",
+    "content": "f992bd48"
+  },
+  "/docs/guides/use-cases-1d0": {
+    "__comp": "17896441",
+    "content": "ca6a5dd6"
+  },
+  "/docs/intro-058": {
+    "__comp": "17896441",
+    "content": "0e384e19"
+  },
+  "/-070": {
+    "__comp": "9dd8a0d2",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}

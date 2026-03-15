@@ -1,0 +1,23 @@
+{
+  "id": "cli/init",
+  "title": "actio init",
+  "description": "Add the Actio sidecar to an existing repository. Does not overwrite existing files.",
+  "source": "@site/docs/cli/init.md",
+  "sourceDirName": "cli",
+  "slug": "/cli/init",
+  "permalink": "/docs/cli/init",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "actio create",
+    "permalink": "/docs/cli/create"
+  },
+  "next": {
+    "title": "actio validate",
+    "permalink": "/docs/cli/validate"
+  }
+}

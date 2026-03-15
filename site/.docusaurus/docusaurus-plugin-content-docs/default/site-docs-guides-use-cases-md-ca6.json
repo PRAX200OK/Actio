@@ -1,0 +1,19 @@
+{
+  "id": "guides/use-cases",
+  "title": "Use cases",
+  "description": "Actio is use-case agnostic. The same sidecar layout and index work for many kinds of projects. Below are common patterns.",
+  "source": "@site/docs/guides/use-cases.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/use-cases",
+  "permalink": "/docs/guides/use-cases",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Schema validation",
+    "permalink": "/docs/guides/schema-validation"
+  }
+}

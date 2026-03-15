@@ -1,0 +1,23 @@
+{
+  "id": "cli/doctor",
+  "title": "actio doctor",
+  "description": "Run the same checks as actio validate but always exit 0. Use it for a quick health check without failing scripts or CI.",
+  "source": "@site/docs/cli/doctor.md",
+  "sourceDirName": "cli",
+  "slug": "/cli/doctor",
+  "permalink": "/docs/cli/doctor",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "actio validate",
+    "permalink": "/docs/cli/validate"
+  },
+  "next": {
+    "title": "actio mcp",
+    "permalink": "/docs/cli/mcp"
+  }
+}

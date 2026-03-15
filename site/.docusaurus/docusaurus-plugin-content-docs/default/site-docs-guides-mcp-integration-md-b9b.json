@@ -1,0 +1,23 @@
+{
+  "id": "guides/mcp-integration",
+  "title": "MCP integration",
+  "description": "Actio can expose its context to AI tools via a minimal MCP (Model Context Protocol) server. Run actio mcp and connect your tool over stdio.",
+  "source": "@site/docs/guides/mcp-integration.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/mcp-integration",
+  "permalink": "/docs/guides/mcp-integration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Plugins",
+    "permalink": "/docs/guides/plugins"
+  },
+  "next": {
+    "title": "Schema validation",
+    "permalink": "/docs/guides/schema-validation"
+  }
+}

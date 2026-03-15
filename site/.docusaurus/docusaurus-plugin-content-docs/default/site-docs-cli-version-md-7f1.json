@@ -1,0 +1,23 @@
+{
+  "id": "cli/version",
+  "title": "actio version",
+  "description": "Print the version number of Actio.",
+  "source": "@site/docs/cli/version.md",
+  "sourceDirName": "cli",
+  "slug": "/cli/version",
+  "permalink": "/docs/cli/version",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "actio mcp",
+    "permalink": "/docs/cli/mcp"
+  },
+  "next": {
+    "title": "Plugins",
+    "permalink": "/docs/guides/plugins"
+  }
+}

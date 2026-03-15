@@ -1,0 +1,23 @@
+{
+  "id": "guides/plugins",
+  "title": "Plugins",
+  "description": "Plugins extend Actio validation with extra checks (e.g. \"this file must exist\"). They are YAML files under actio/plugins/.",
+  "source": "@site/docs/guides/plugins.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/plugins",
+  "permalink": "/docs/guides/plugins",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "actio version",
+    "permalink": "/docs/cli/version"
+  },
+  "next": {
+    "title": "Plugins",
+    "permalink": "/docs/guides/plugins"
+  }
+}

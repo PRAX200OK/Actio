@@ -1,0 +1,81 @@
+.heroBanner {
+  padding: 4rem 0 5rem;
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.heroContent .hero__title {
+  font-size: 2.5rem;
+}
+
+.heroContent .hero__subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.features {
+  padding: 4rem 0;
+}
+
+.featureCard {
+  padding: 1.5rem;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.featureCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureCard h3 a {
+  color: var(--ifm-heading-color);
+}
+
+.featureCard p {
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.quickStart {
+  padding: 3rem 0 5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.quickStart h2 {
+  margin-bottom: 1.5rem;
+}
+
+.codeBlock {
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.codeBlock pre {
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--ifm-code-background);
+}
+
+.codeBlock code {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

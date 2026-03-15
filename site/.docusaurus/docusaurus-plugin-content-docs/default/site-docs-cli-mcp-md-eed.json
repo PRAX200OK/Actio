@@ -1,0 +1,23 @@
+{
+  "id": "cli/mcp",
+  "title": "actio mcp",
+  "description": "Start a minimal MCP-compatible (Model Context Protocol) server over stdio. Exposes Actio resources so AI tools can list and read sidecar files.",
+  "source": "@site/docs/cli/mcp.md",
+  "sourceDirName": "cli",
+  "slug": "/cli/mcp",
+  "permalink": "/docs/cli/mcp",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "actio doctor",
+    "permalink": "/docs/cli/doctor"
+  },
+  "next": {
+    "title": "actio version",
+    "permalink": "/docs/cli/version"
+  }
+}

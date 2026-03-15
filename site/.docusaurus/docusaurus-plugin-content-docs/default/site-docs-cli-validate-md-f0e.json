@@ -1,0 +1,23 @@
+{
+  "id": "cli/validate",
+  "title": "actio validate",
+  "description": "Check that the Actio sidecar is present, valid, and consistent. Fails with a non-zero exit code if there are issues.",
+  "source": "@site/docs/cli/validate.md",
+  "sourceDirName": "cli",
+  "slug": "/cli/validate",
+  "permalink": "/docs/cli/validate",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "actio init",
+    "permalink": "/docs/cli/init"
+  },
+  "next": {
+    "title": "actio doctor",
+    "permalink": "/docs/cli/doctor"
+  }
+}

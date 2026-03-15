@@ -1,0 +1,50 @@
+/**
+ * ACT Framework docs – custom styles
+ * React-docs style: clean, readable, dev-focused.
+ */
+
+:root {
+  --ifm-color-primary: #0d7377;
+  --ifm-color-primary-dark: #0b6265;
+  --ifm-color-primary-darker: #0a5c5f;
+  --ifm-color-primary-darkest: #084c4e;
+  --ifm-color-primary-light: #0f8589;
+  --ifm-color-primary-lighter: #108b8f;
+  --ifm-color-primary-lightest: #139da1;
+  --ifm-font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --ifm-code-font-size: 90%;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #14b8a6;
+  --ifm-color-primary-dark: #12a696;
+  --ifm-color-primary-darker: #119d8e;
+  --ifm-color-primary-darkest: #0e8275;
+  --ifm-color-primary-light: #16cab6;
+  --ifm-color-primary-lighter: #17d3be;
+  --ifm-color-primary-lightest: #2ad9c6;
+}
+
+/* Doc content readability */
+.markdown {
+  --ifm-heading-font-weight: 600;
+}
+
+.markdown h1:first-child {
+  font-size: 2rem;
+}
+
+.markdown table {
+  display: table;
+  width: 100%;
+}
+
+/* Code blocks */
+.prism-code {
+  border-radius: 8px;
+}
+
+/* Navbar logo */
+.navbar__logo img {
+  height: 32px;
+}

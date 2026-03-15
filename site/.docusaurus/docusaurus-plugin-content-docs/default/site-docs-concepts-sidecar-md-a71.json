@@ -1,0 +1,23 @@
+{
+  "id": "concepts/sidecar",
+  "title": "The Actio sidecar",
+  "description": "The sidecar is a directory named actio/ at your project root. It holds all context that AI agents are supposed to read before changing code.",
+  "source": "@site/docs/concepts/sidecar.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/sidecar",
+  "permalink": "/docs/concepts/sidecar",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Create a project",
+    "permalink": "/docs/getting-started/create-project"
+  },
+  "next": {
+    "title": "The Actio sidecar",
+    "permalink": "/docs/concepts/sidecar"
+  }
+}
