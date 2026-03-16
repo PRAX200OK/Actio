@@ -1,11 +1,11 @@
 {
   "id": "concepts/index-yaml",
-  "title": "index.yaml",
-  "description": "actio/index.yaml is the context router. It tells agents which files to read for which domain, rule, or task.",
+  "title": "router.yaml",
+  "description": "actio/router.yaml is the context router. It tells agents which files to read for which domain, rule, or task.",
   "source": "@site/docs/concepts/index-yaml.md",
   "sourceDirName": "concepts",
   "slug": "/concepts/index-yaml",
-  "permalink": "/docs/concepts/index-yaml",
+  "permalink": "/Actio/docs/concepts/index-yaml",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docsSidebar",
   "previous": {
     "title": "The Actio sidecar",
-    "permalink": "/docs/concepts/sidecar"
+    "permalink": "/Actio/docs/concepts/sidecar"
   },
   "next": {
     "title": "Domains",
-    "permalink": "/docs/concepts/domains"
+    "permalink": "/Actio/docs/concepts/domains"
   }
 }

@@ -18,13 +18,13 @@ func TestValidate_MissingActDir(t *testing.T) {
 	}
 	var found bool
 	for _, s := range issues {
-		if s == "missing actio/index.yaml" {
+		if s == "missing actio/router.yaml" {
 			found = true
 			break
 		}
 	}
 	if !found {
-		t.Errorf("expected 'missing actio/index.yaml' in issues: %v", issues)
+		t.Errorf("expected 'missing actio/router.yaml' in issues: %v", issues)
 	}
 }
 
@@ -34,7 +34,7 @@ func TestValidate_InvalidYAML(t *testing.T) {
 	if err := os.MkdirAll(actRoot, 0o755); err != nil {
 		t.Fatal(err)
 	}
-	if err := os.WriteFile(filepath.Join(actRoot, "index.yaml"), []byte("not: valid: yaml: ["), 0o644); err != nil {
+	if err := os.WriteFile(filepath.Join(actRoot, "router.yaml"), []byte("not: valid: yaml: ["), 0o644); err != nil {
 		t.Fatal(err)
 	}
 	// Create required dirs/files so we don't get those issues
@@ -51,7 +51,7 @@ func TestValidate_InvalidYAML(t *testing.T) {
 	}
 	var found bool
 	for _, s := range issues {
-		if s == "index.yaml is not valid YAML" {
+		if s == "router.yaml is not valid YAML" {
 			found = true
 			break
 		}
@@ -76,7 +76,7 @@ func TestValidate_ValidProject(t *testing.T) {
 	if err := os.MkdirAll(filepath.Join(actRoot, "tasks"), 0o755); err != nil {
 		t.Fatal(err)
 	}
-	indexYAML := `version: 1
+	routerYAML := `version: 1
 project:
   name: test-project
 domains:
@@ -91,7 +91,7 @@ tasks:
     domain: connectors
     guide: tasks/task.md
 `
-	if err := os.WriteFile(filepath.Join(actRoot, "index.yaml"), []byte(indexYAML), 0o644); err != nil {
+	if err := os.WriteFile(filepath.Join(actRoot, "router.yaml"), []byte(routerYAML), 0o644); err != nil {
 		t.Fatal(err)
 	}
 	for _, f := range []string{"architecture/system.md", "interfaces/contracts.yaml", "rules/rules.md", "tasks/task.md"} {
@@ -119,7 +119,7 @@ func TestValidate_SchemaErrors(t *testing.T) {
 	}
 
 	// Missing version and project.name; task references unknown domain
-	indexYAML := `version: 0
+	routerYAML := `version: 0
 project:
   name: ""
 domains:
@@ -134,7 +134,7 @@ tasks:
     domain: nonexistent
     guide: tasks/task.md
 `
-	if err := os.WriteFile(filepath.Join(actRoot, "index.yaml"), []byte(indexYAML), 0o644); err != nil {
+	if err := os.WriteFile(filepath.Join(actRoot, "router.yaml"), []byte(routerYAML), 0o644); err != nil {
 		t.Fatal(err)
 	}
 	for _, f := range []string{"architecture/system.md", "interfaces/contracts.yaml", "rules/rules.md", "tasks/task.md"} {

@@ -1,103 +1,103 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/Actio/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/Actio/docs",
           "mainDocId": "intro",
           "docs": [
             {
               "id": "cli/create",
-              "path": "/docs/cli/create",
+              "path": "/Actio/docs/cli/create",
               "sidebar": "docsSidebar"
             },
             {
               "id": "cli/doctor",
-              "path": "/docs/cli/doctor",
+              "path": "/Actio/docs/cli/doctor",
               "sidebar": "docsSidebar"
             },
             {
               "id": "cli/init",
-              "path": "/docs/cli/init",
+              "path": "/Actio/docs/cli/init",
               "sidebar": "docsSidebar"
             },
             {
               "id": "cli/mcp",
-              "path": "/docs/cli/mcp",
+              "path": "/Actio/docs/cli/mcp",
               "sidebar": "docsSidebar"
             },
             {
               "id": "cli/validate",
-              "path": "/docs/cli/validate",
+              "path": "/Actio/docs/cli/validate",
               "sidebar": "docsSidebar"
             },
             {
               "id": "cli/version",
-              "path": "/docs/cli/version",
+              "path": "/Actio/docs/cli/version",
               "sidebar": "docsSidebar"
             },
             {
               "id": "concepts/domains",
-              "path": "/docs/concepts/domains",
+              "path": "/Actio/docs/concepts/domains",
               "sidebar": "docsSidebar"
             },
             {
               "id": "concepts/index-yaml",
-              "path": "/docs/concepts/index-yaml",
+              "path": "/Actio/docs/concepts/index-yaml",
               "sidebar": "docsSidebar"
             },
             {
               "id": "concepts/rules-and-tasks",
-              "path": "/docs/concepts/rules-and-tasks",
+              "path": "/Actio/docs/concepts/rules-and-tasks",
               "sidebar": "docsSidebar"
             },
             {
               "id": "concepts/sidecar",
-              "path": "/docs/concepts/sidecar",
+              "path": "/Actio/docs/concepts/sidecar",
               "sidebar": "docsSidebar"
             },
             {
               "id": "getting-started/create-project",
-              "path": "/docs/getting-started/create-project",
+              "path": "/Actio/docs/getting-started/create-project",
               "sidebar": "docsSidebar"
             },
             {
               "id": "getting-started/installation",
-              "path": "/docs/getting-started/installation",
+              "path": "/Actio/docs/getting-started/installation",
               "sidebar": "docsSidebar"
             },
             {
               "id": "getting-started/quick-start",
-              "path": "/docs/getting-started/quick-start",
+              "path": "/Actio/docs/getting-started/quick-start",
               "sidebar": "docsSidebar"
             },
             {
               "id": "guides/mcp-integration",
-              "path": "/docs/guides/mcp-integration",
+              "path": "/Actio/docs/guides/mcp-integration",
               "sidebar": "docsSidebar"
             },
             {
               "id": "guides/plugins",
-              "path": "/docs/guides/plugins",
+              "path": "/Actio/docs/guides/plugins",
               "sidebar": "docsSidebar"
             },
             {
               "id": "guides/schema-validation",
-              "path": "/docs/guides/schema-validation",
+              "path": "/Actio/docs/guides/schema-validation",
               "sidebar": "docsSidebar"
             },
             {
               "id": "guides/use-cases",
-              "path": "/docs/guides/use-cases",
+              "path": "/Actio/docs/guides/use-cases",
               "sidebar": "docsSidebar"
             },
             {
               "id": "intro",
-              "path": "/docs/intro",
+              "path": "/Actio/docs/intro",
               "sidebar": "docsSidebar"
             }
           ],
@@ -105,7 +105,7 @@
           "sidebars": {
             "docsSidebar": {
               "link": {
-                "path": "/docs/intro",
+                "path": "/Actio/docs/intro",
                 "label": "intro"
               }
             }

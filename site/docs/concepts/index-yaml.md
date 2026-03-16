@@ -1,6 +1,6 @@
-# index.yaml
+# router.yaml
 
-`actio/index.yaml` is the **context router**. It tells agents which files to read for which domain, rule, or task.
+`actio/router.yaml` is the **context router**. It tells agents which files to read for which domain, rule, or task.
 
 ## Structure
 
@@ -63,7 +63,7 @@ Agents can use tasks to load minimal context: “For task X, read this guide and
 
 Running `actio validate` checks:
 
-- `index.yaml` exists and is valid YAML.
+- `router.yaml` exists and is valid YAML.
 - **version** and **project.name** are set.
 - Every referenced file exists under `actio/`.
 - Every task’s **domain** exists in **domains**.

@@ -12,9 +12,9 @@ AI agents hallucinate or drift because:
 
 ## The solution
 
-Actio adds a small **sidecar** to your repo: an `actio/` directory and an `ACTIO.md` entry file. The sidecar is the **source of truth** for agents.
+Actio adds a small **sidecar** to your repo: an `actio/` directory and an `ENTRYPOINT.yaml` entry file. The sidecar is the **source of truth** for agents.
 
-- **Deterministic entry point:** Agents read `actio/index.yaml` first.
+- **Deterministic entry point:** Agents read `actio/router.yaml` first.
 - **Structured routing:** The index points to architecture, interfaces, patterns, rules, and task guides.
 - **Validation:** The CLI checks that the sidecar is complete and consistent.
 
@@ -23,7 +23,7 @@ Actio adds a small **sidecar** to your repo: an `actio/` directory and an `ACTIO
 | Feature | Description |
 |--------|-------------|
 | **Sidecar layout** | `actio/` with `architecture/`, `interfaces/`, `patterns/`, `rules/`, `tasks/` |
-| **Index router** | `index.yaml` routes agents to the right docs per domain and task |
+| **Index router** | `router.yaml` routes agents to the right docs per domain and task |
 | **CLI** | `actio create`, `actio init`, `actio validate`, `actio doctor`, `actio mcp` |
 | **Schema validation** | Index and referenced files are validated |
 | **Plugins** | YAML plugins under `actio/plugins/` for extra checks |

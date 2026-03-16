@@ -5,7 +5,7 @@
   "source": "@site/docs/cli/validate.md",
   "sourceDirName": "cli",
   "slug": "/cli/validate",
-  "permalink": "/docs/cli/validate",
+  "permalink": "/Actio/docs/cli/validate",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docsSidebar",
   "previous": {
     "title": "actio init",
-    "permalink": "/docs/cli/init"
+    "permalink": "/Actio/docs/cli/init"
   },
   "next": {
     "title": "actio doctor",
-    "permalink": "/docs/cli/doctor"
+    "permalink": "/Actio/docs/cli/doctor"
   }
 }

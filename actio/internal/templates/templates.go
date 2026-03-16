@@ -2,17 +2,17 @@ package templates
 
 import (
 	"fmt"
-  
+
 	"actio/internal/actio"
 )
 
 func ActMD() string {
 	return fmt.Sprintf("# Actio Framework\n\n"+
 		"This repository uses the **Actio** (AI Context Toolkit) framework.\n\n"+
-		"- AI agents **must read** `%s/%s` first before generating or modifying code.\n"+
+		"- AI agents **must read** `%s` first before generating or modifying code.\n"+
 		"- Architecture and rules defined under `%s/` are the **source of truth**.\n"+
 		"- Agents should not modify application code that violates these rules.\n",
-		actio.DirName, actio.IndexFile, actio.DirName)
+		actio.StandardFiles["index"], actio.DirName)
 }
 
 const IndexYAML = `version: 1

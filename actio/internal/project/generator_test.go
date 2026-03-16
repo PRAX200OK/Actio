@@ -20,8 +20,8 @@ func TestCreateNewProject_Success(t *testing.T) {
 	if _, err := os.Stat(filepath.Join(root, "src")); os.IsNotExist(err) {
 		t.Fatal("src directory was not created")
 	}
-	if _, err := os.Stat(filepath.Join(root, "ACTIO.md")); os.IsNotExist(err) {
-		t.Fatal("ACTIO.md was not created")
+	if _, err := os.Stat(filepath.Join(root, "ENTRYPOINT.yaml")); os.IsNotExist(err) {
+		t.Fatal("ENTRYPOINT.yaml was not created")
 	}
 	actRoot := filepath.Join(root, "actio")
 	for _, d := range []string{"architecture", "interfaces", "patterns", "rules", "tasks"} {
@@ -30,7 +30,7 @@ func TestCreateNewProject_Success(t *testing.T) {
 			t.Errorf("expected directory %s: err=%v isDir=%v", p, err, fi != nil && fi.IsDir())
 		}
 	}
-	for _, f := range []string{"actio/index.yaml", "actio/architecture/system.md", "actio/rules/rules.md", "actio/tasks/task.md"} {
+	for _, f := range []string{"actio/router.yaml", "actio/architecture/system.md", "actio/rules/rules.md", "actio/tasks/task.md"} {
 		p := filepath.Join(root, f)
 		if _, err := os.Stat(p); err != nil {
 			t.Errorf("expected file %s: %v", p, err)
@@ -69,18 +69,18 @@ func TestInitExistingRepo_Success(t *testing.T) {
 	if err != nil {
 		t.Fatalf("InitExistingRepo: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join(dir, "ACTIO.md")); os.IsNotExist(err) {
-		t.Fatal("ACTIO.md was not created")
+	if _, err := os.Stat(filepath.Join(dir, "ENTRYPOINT.yaml")); os.IsNotExist(err) {
+		t.Fatal("ENTRYPOINT.yaml was not created")
 	}
-	if _, err := os.Stat(filepath.Join(dir, "actio", "index.yaml")); os.IsNotExist(err) {
-		t.Fatal("actio/index.yaml was not created")
+	if _, err := os.Stat(filepath.Join(dir, "actio", "router.yaml")); os.IsNotExist(err) {
+		t.Fatal("actio/router.yaml was not created")
 	}
 }
 
 func TestInitExistingRepo_DoesNotOverwriteACTIOMd(t *testing.T) {
 	dir := t.TempDir()
-	actPath := filepath.Join(dir, "ACTIO.md")
-	custom := "# Custom ACTIO"
+	actPath := filepath.Join(dir, "ENTRYPOINT.yaml")
+	custom := "# Custom ENTRYPOINT"
 	if err := os.WriteFile(actPath, []byte(custom), 0o644); err != nil {
 		t.Fatal(err)
 	}

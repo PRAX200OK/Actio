@@ -27,16 +27,16 @@ Created Actio-enabled project at /path/to/cwd/demo-api
 
 ```
 <project_name>/
-├── ACTIO.md              # Entry file for AI agents
+├── ENTRYPOINT.yaml       # Entry file for AI agents
 ├── src/                # Your application code (empty)
 └── actio/
-    ├── index.yaml      # Context router
+    ├── router.yaml     # Context router
     ├── architecture/
     │   └── system.md   # System architecture doc
     ├── interfaces/
     │   └── contracts.yaml
     ├── patterns/
-    │   └── example_pattern.md
+    │   └── pattern.md
     ├── rules/
     │   └── rules.md
     └── tasks/

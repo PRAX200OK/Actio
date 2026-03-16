@@ -10,10 +10,10 @@ The app lives in `src/` (or your usual layout); the **actio/** directory sits be
 
 ```
 your-repo/
-├── ACTIO.md           # Entry file: "read actio/index.yaml first"
+├── ENTRYPOINT.yaml    # Entry file: "read actio/router.yaml first"
 ├── src/             # Your code
 └── actio/             # Sidecar
-    ├── index.yaml   # Router: points to everything below
+    ├── router.yaml  # Router: points to everything below
     ├── architecture/
     ├── interfaces/
     ├── patterns/
@@ -26,7 +26,7 @@ your-repo/
 
 | Path | Purpose |
 |------|--------|
-| **actio/index.yaml** | Single entry for agents; routes to domains, rules, tasks |
+| **actio/router.yaml** | Single entry for agents; routes to domains, rules, tasks |
 | **actio/architecture/** | High-level system design, bounded contexts, tech choices |
 | **actio/interfaces/** | Contracts (APIs, connectors, boundaries) |
 | **actio/patterns/** | Reusable patterns (e.g. "Snowflake connector", "event handler") |
@@ -36,9 +36,9 @@ your-repo/
 
 ## Contract with agents
 
-**ACTIO.md** at the repo root states:
+**ENTRYPOINT.yaml** at the repo root states:
 
-- AI agents **must read** `actio/index.yaml` first.
+- AI agents **must read** `actio/router.yaml` first.
 - Content under `actio/` is the **source of truth**.
 - Agents must not violate the architecture and rules defined there.
 

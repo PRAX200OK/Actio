@@ -14,16 +14,16 @@ This creates:
 
 ```
 my-app/
-├── ACTIO.md
+├── ENTRYPOINT.yaml
 ├── src/
 └── actio/
-    ├── index.yaml
+    ├── router.yaml
     ├── architecture/
     │   └── system.md
     ├── interfaces/
     │   └── contracts.yaml
     ├── patterns/
-    │   └── example_pattern.md
+    │   └── pattern.md
     ├── rules/
     │   └── rules.md
     └── tasks/
@@ -62,8 +62,8 @@ Reports any missing or invalid Actio files. Exit code is always 0 (non-blocking)
 
 When an AI agent opens your repo:
 
-1. **ACTIO.md** tells it to read `actio/index.yaml` first.
-2. **index.yaml** routes it to architecture, rules, and task guides.
+1. **ENTRYPOINT.yaml** tells it to read `actio/router.yaml` first.
+2. **router.yaml** routes it to architecture, rules, and task guides.
 3. The agent uses that context before writing or changing code.
 
 No more “scan everything” — agents get **deterministic context**.

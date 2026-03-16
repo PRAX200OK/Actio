@@ -5,7 +5,7 @@
   "source": "@site/docs/cli/doctor.md",
   "sourceDirName": "cli",
   "slug": "/cli/doctor",
-  "permalink": "/docs/cli/doctor",
+  "permalink": "/Actio/docs/cli/doctor",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docsSidebar",
   "previous": {
     "title": "actio validate",
-    "permalink": "/docs/cli/validate"
+    "permalink": "/Actio/docs/cli/validate"
   },
   "next": {
     "title": "actio mcp",
-    "permalink": "/docs/cli/mcp"
+    "permalink": "/Actio/docs/cli/mcp"
   }
 }

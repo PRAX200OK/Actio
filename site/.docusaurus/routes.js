@@ -3,122 +3,122 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/docs',
-    component: ComponentCreator('/docs', 'a25'),
+    path: '/Actio/docs',
+    component: ComponentCreator('/Actio/docs', '8f5'),
     routes: [
       {
-        path: '/docs',
-        component: ComponentCreator('/docs', 'bea'),
+        path: '/Actio/docs',
+        component: ComponentCreator('/Actio/docs', '04c'),
         routes: [
           {
-            path: '/docs',
-            component: ComponentCreator('/docs', '989'),
+            path: '/Actio/docs',
+            component: ComponentCreator('/Actio/docs', '54b'),
             routes: [
               {
-                path: '/docs/cli/create',
-                component: ComponentCreator('/docs/cli/create', '7a2'),
+                path: '/Actio/docs/cli/create',
+                component: ComponentCreator('/Actio/docs/cli/create', '2a9'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/cli/doctor',
-                component: ComponentCreator('/docs/cli/doctor', 'e0c'),
+                path: '/Actio/docs/cli/doctor',
+                component: ComponentCreator('/Actio/docs/cli/doctor', '5c2'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/cli/init',
-                component: ComponentCreator('/docs/cli/init', '7e9'),
+                path: '/Actio/docs/cli/init',
+                component: ComponentCreator('/Actio/docs/cli/init', '5eb'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/cli/mcp',
-                component: ComponentCreator('/docs/cli/mcp', '879'),
+                path: '/Actio/docs/cli/mcp',
+                component: ComponentCreator('/Actio/docs/cli/mcp', 'a06'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/cli/validate',
-                component: ComponentCreator('/docs/cli/validate', 'cc0'),
+                path: '/Actio/docs/cli/validate',
+                component: ComponentCreator('/Actio/docs/cli/validate', '08e'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/cli/version',
-                component: ComponentCreator('/docs/cli/version', '6e5'),
+                path: '/Actio/docs/cli/version',
+                component: ComponentCreator('/Actio/docs/cli/version', '845'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/concepts/domains',
-                component: ComponentCreator('/docs/concepts/domains', '813'),
+                path: '/Actio/docs/concepts/domains',
+                component: ComponentCreator('/Actio/docs/concepts/domains', 'b05'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/concepts/index-yaml',
-                component: ComponentCreator('/docs/concepts/index-yaml', '365'),
+                path: '/Actio/docs/concepts/index-yaml',
+                component: ComponentCreator('/Actio/docs/concepts/index-yaml', 'dbf'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/concepts/rules-and-tasks',
-                component: ComponentCreator('/docs/concepts/rules-and-tasks', 'b32'),
+                path: '/Actio/docs/concepts/rules-and-tasks',
+                component: ComponentCreator('/Actio/docs/concepts/rules-and-tasks', 'df6'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/concepts/sidecar',
-                component: ComponentCreator('/docs/concepts/sidecar', '4cb'),
+                path: '/Actio/docs/concepts/sidecar',
+                component: ComponentCreator('/Actio/docs/concepts/sidecar', 'e08'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/getting-started/create-project',
-                component: ComponentCreator('/docs/getting-started/create-project', '550'),
+                path: '/Actio/docs/getting-started/create-project',
+                component: ComponentCreator('/Actio/docs/getting-started/create-project', '8e8'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/getting-started/installation',
-                component: ComponentCreator('/docs/getting-started/installation', 'f1f'),
+                path: '/Actio/docs/getting-started/installation',
+                component: ComponentCreator('/Actio/docs/getting-started/installation', '95b'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/getting-started/quick-start',
-                component: ComponentCreator('/docs/getting-started/quick-start', '835'),
+                path: '/Actio/docs/getting-started/quick-start',
+                component: ComponentCreator('/Actio/docs/getting-started/quick-start', '51a'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/guides/mcp-integration',
-                component: ComponentCreator('/docs/guides/mcp-integration', 'a42'),
+                path: '/Actio/docs/guides/mcp-integration',
+                component: ComponentCreator('/Actio/docs/guides/mcp-integration', '60f'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/guides/plugins',
-                component: ComponentCreator('/docs/guides/plugins', '86a'),
+                path: '/Actio/docs/guides/plugins',
+                component: ComponentCreator('/Actio/docs/guides/plugins', '757'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/guides/schema-validation',
-                component: ComponentCreator('/docs/guides/schema-validation', '99c'),
+                path: '/Actio/docs/guides/schema-validation',
+                component: ComponentCreator('/Actio/docs/guides/schema-validation', '7ae'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/guides/use-cases',
-                component: ComponentCreator('/docs/guides/use-cases', '1d0'),
+                path: '/Actio/docs/guides/use-cases',
+                component: ComponentCreator('/Actio/docs/guides/use-cases', '7e6'),
                 exact: true,
                 sidebar: "docsSidebar"
               },
               {
-                path: '/docs/intro',
-                component: ComponentCreator('/docs/intro', '058'),
+                path: '/Actio/docs/intro',
+                component: ComponentCreator('/Actio/docs/intro', '6f9'),
                 exact: true,
                 sidebar: "docsSidebar"
               }
@@ -129,8 +129,8 @@ export default [
     ]
   },
   {
-    path: '/',
-    component: ComponentCreator('/', '070'),
+    path: '/Actio/',
+    component: ComponentCreator('/Actio/', 'b06'),
     exact: true
   },
   {

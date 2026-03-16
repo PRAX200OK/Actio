@@ -5,7 +5,7 @@
   "source": "@site/docs/guides/plugins.md",
   "sourceDirName": "guides",
   "slug": "/guides/plugins",
-  "permalink": "/docs/guides/plugins",
+  "permalink": "/Actio/docs/guides/plugins",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docsSidebar",
   "previous": {
     "title": "actio version",
-    "permalink": "/docs/cli/version"
+    "permalink": "/Actio/docs/cli/version"
   },
   "next": {
     "title": "Plugins",
-    "permalink": "/docs/guides/plugins"
+    "permalink": "/Actio/docs/guides/plugins"
   }
 }

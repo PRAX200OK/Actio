@@ -12,9 +12,9 @@ Runs in the **current directory**.
 
 ## What it checks
 
-1. **actio/index.yaml** exists and is valid YAML.
+1. **actio/router.yaml** exists and is valid YAML.
 2. **Schema:** `version`, `project.name`, `domains`, `rules.coding`, and task references are set and valid.
-3. **Referential integrity:** Every file path in `index.yaml` (architecture, interfaces, patterns, rules, task guides) exists under `actio/`.
+3. **Referential integrity:** Every file path in `router.yaml` (architecture, interfaces, patterns, rules, task guides) exists under `actio/`.
 4. **Required layout:** Directories `actio/architecture/`, `actio/interfaces/`, `actio/rules/`, `actio/tasks/` exist.
 5. **Default files:** `architecture/system.md`, `rules/rules.md`, `tasks/task.md` exist (or whatever your index references).
 6. **Plugins:** Any YAML plugins under `actio/plugins/` are run; their required files are checked.
@@ -31,9 +31,9 @@ Actio validation passed
 
 ```
 Actio validation issues:
-- missing actio/index.yaml
-- index.yaml: project.name must be set
-- index.yaml: tasks.deploy.guide references missing file: actio/tasks/deploy.md
+- missing actio/router.yaml
+- router.yaml: project.name must be set
+- router.yaml: tasks.deploy.guide references missing file: actio/tasks/deploy.md
 ```
 
 ## Use in CI

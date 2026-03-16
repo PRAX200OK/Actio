@@ -1,12 +1,12 @@
 # Schema validation
 
-Actio validates `actio/index.yaml` against a **schema** and checks **referential integrity** so the sidecar stays consistent.
+Actio validates `actio/router.yaml` against a **schema** and checks **referential integrity** so the sidecar stays consistent.
 
 ## What is validated
 
 ### 1. Presence and YAML
 
-- `actio/index.yaml` must exist.
+- `actio/router.yaml` must exist.
 - It must be valid YAML (parseable).
 
 ### 2. Required fields
@@ -30,8 +30,8 @@ Actio validates `actio/index.yaml` against a **schema** and checks **referential
 
 ### 4. Directory layout
 
-- `act/architecture/`, `act/interfaces/`, `act/rules/`, `act/tasks/` must exist as directories.
-- Default expected files (e.g. `architecture/system.md`, `rules/coding_rules.md`, `tasks/example_task.md`) are checked if your index references them.
+- `actio/architecture/`, `actio/interfaces/`, `actio/rules/`, `actio/tasks/` must exist as directories.
+- Default expected files (e.g. `architecture/system.md`, `rules/rules.md`, `tasks/task.md`) are checked if your router references them.
 
 ### 5. Plugins
 
@@ -42,15 +42,15 @@ Actio validates `actio/index.yaml` against a **schema** and checks **referential
 Validation returns **human-readable issues**, for example:
 
 - `missing act/index.yaml`
-- `index.yaml: version must be set and > 0`
-- `index.yaml: project.name must be set`
-- `index.yaml: domains.connectors.architecture references missing file: act/architecture/system.md`
-- `index.yaml: tasks.deploy.domain references unknown domain: platform`
+- `router.yaml: version must be set and > 0`
+- `router.yaml: project.name must be set`
+- `router.yaml: domains.connectors.architecture references missing file: actio/architecture/system.md`
+- `router.yaml: tasks.deploy.domain references unknown domain: platform`
 - `plugin "security": missing required file: docs/SECURITY.md`
 
-Run `act validate` to see all issues; fix paths or add missing files until validation passes.
+Run `actio validate` to see all issues; fix paths or add missing files until validation passes.
 
 ## See also
 
-- [index.yaml](/docs/concepts/index-yaml)
-- [act validate](/docs/cli/validate)
+- [router.yaml](/docs/concepts/index-yaml)
+- [actio validate](/docs/cli/validate)

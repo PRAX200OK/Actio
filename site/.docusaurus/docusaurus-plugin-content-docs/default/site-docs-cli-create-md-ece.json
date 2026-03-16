@@ -1,11 +1,11 @@
 {
   "id": "cli/create",
   "title": "actio create",
-  "description": "Create a new project with the full Actio sidecar and ACTIO.md entry file.",
+  "description": "Create a new project with the full Actio sidecar and ENTRYPOINT.yaml entry file.",
   "source": "@site/docs/cli/create.md",
   "sourceDirName": "cli",
   "slug": "/cli/create",
-  "permalink": "/docs/cli/create",
+  "permalink": "/Actio/docs/cli/create",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docsSidebar",
   "previous": {
     "title": "Rules and tasks",
-    "permalink": "/docs/concepts/rules-and-tasks"
+    "permalink": "/Actio/docs/concepts/rules-and-tasks"
   },
   "next": {
     "title": "actio create",
-    "permalink": "/docs/cli/create"
+    "permalink": "/Actio/docs/cli/create"
   }
 }

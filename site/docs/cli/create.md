@@ -1,6 +1,6 @@
 # actio create
 
-Create a new project with the full Actio sidecar and `ACTIO.md` entry file.
+Create a new project with the full Actio sidecar and `ENTRYPOINT.yaml` entry file.
 
 ## Synopsis
 
@@ -25,15 +25,15 @@ actio create my-service
 
 ## Generated layout
 
-- **&lt;project_name&gt;/ACTIO.md**
+- **&lt;project_name&gt;/ENTRYPOINT.yaml**
 - **&lt;project_name&gt;/src/** (empty)
 - **&lt;project_name&gt;/actio/** with:
-  - `index.yaml`
+  - `router.yaml`
   - `architecture/system.md`
   - `interfaces/contracts.yaml`
-  - `patterns/example_pattern.md`
-  - `rules/coding_rules.md`
-  - `tasks/example_task.md`
+  - `patterns/pattern.md`
+  - `rules/rules.md`
+  - `tasks/task.md`
 
 ## Errors
 

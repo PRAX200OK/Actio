@@ -86,7 +86,7 @@ const config = {
       },
       prism: {
         theme: themes.github,
-        darkTheme: themes.dracula,
+        darkTheme: themes.vsDark,
         additionalLanguages: ['bash', 'yaml', 'json'],
       },
       colorMode: {

@@ -1,90 +1,90 @@
 {
-  "/docs-a25": {
+  "/Actio/docs-8f5": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/docs-bea": {
+  "/Actio/docs-04c": {
     "__comp": "a7bd4aaa",
-    "__props": "0058b4c6"
+    "__props": "61e0f80d"
   },
-  "/docs-989": {
+  "/Actio/docs-54b": {
     "__comp": "a94703ab"
   },
-  "/docs/cli/create-7a2": {
+  "/Actio/docs/cli/create-2a9": {
     "__comp": "17896441",
     "content": "eceb5f47"
   },
-  "/docs/cli/doctor-e0c": {
+  "/Actio/docs/cli/doctor-5c2": {
     "__comp": "17896441",
     "content": "8ba30265"
   },
-  "/docs/cli/init-7e9": {
+  "/Actio/docs/cli/init-5eb": {
     "__comp": "17896441",
     "content": "43ea9c74"
   },
-  "/docs/cli/mcp-879": {
+  "/Actio/docs/cli/mcp-a06": {
     "__comp": "17896441",
     "content": "eeddcf2d"
   },
-  "/docs/cli/validate-cc0": {
+  "/Actio/docs/cli/validate-08e": {
     "__comp": "17896441",
     "content": "f0e95c59"
   },
-  "/docs/cli/version-6e5": {
+  "/Actio/docs/cli/version-845": {
     "__comp": "17896441",
     "content": "7f192374"
   },
-  "/docs/concepts/domains-813": {
+  "/Actio/docs/concepts/domains-b05": {
     "__comp": "17896441",
     "content": "b09be008"
   },
-  "/docs/concepts/index-yaml-365": {
+  "/Actio/docs/concepts/index-yaml-dbf": {
     "__comp": "17896441",
     "content": "a713916c"
   },
-  "/docs/concepts/rules-and-tasks-b32": {
+  "/Actio/docs/concepts/rules-and-tasks-df6": {
     "__comp": "17896441",
     "content": "55be8792"
   },
-  "/docs/concepts/sidecar-4cb": {
+  "/Actio/docs/concepts/sidecar-e08": {
     "__comp": "17896441",
     "content": "a7133f50"
   },
-  "/docs/getting-started/create-project-550": {
+  "/Actio/docs/getting-started/create-project-8e8": {
     "__comp": "17896441",
     "content": "80a63cae"
   },
-  "/docs/getting-started/installation-f1f": {
+  "/Actio/docs/getting-started/installation-95b": {
     "__comp": "17896441",
     "content": "54f44165"
   },
-  "/docs/getting-started/quick-start-835": {
+  "/Actio/docs/getting-started/quick-start-51a": {
     "__comp": "17896441",
     "content": "588bd741"
   },
-  "/docs/guides/mcp-integration-a42": {
+  "/Actio/docs/guides/mcp-integration-60f": {
     "__comp": "17896441",
     "content": "b9b89239"
   },
-  "/docs/guides/plugins-86a": {
+  "/Actio/docs/guides/plugins-757": {
     "__comp": "17896441",
     "content": "bb350c59"
   },
-  "/docs/guides/schema-validation-99c": {
+  "/Actio/docs/guides/schema-validation-7ae": {
     "__comp": "17896441",
     "content": "f992bd48"
   },
-  "/docs/guides/use-cases-1d0": {
+  "/Actio/docs/guides/use-cases-7e6": {
     "__comp": "17896441",
     "content": "ca6a5dd6"
   },
-  "/docs/intro-058": {
+  "/Actio/docs/intro-6f9": {
     "__comp": "17896441",
     "content": "0e384e19"
   },
-  "/-070": {
+  "/Actio/-b06": {
     "__comp": "9dd8a0d2",
     "__context": {
       "plugin": "a7456010"

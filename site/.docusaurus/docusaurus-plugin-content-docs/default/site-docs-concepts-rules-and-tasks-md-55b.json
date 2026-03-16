@@ -5,7 +5,7 @@
   "source": "@site/docs/concepts/rules-and-tasks.md",
   "sourceDirName": "concepts",
   "slug": "/concepts/rules-and-tasks",
-  "permalink": "/docs/concepts/rules-and-tasks",
+  "permalink": "/Actio/docs/concepts/rules-and-tasks",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docsSidebar",
   "previous": {
     "title": "Domains",
-    "permalink": "/docs/concepts/domains"
+    "permalink": "/Actio/docs/concepts/domains"
   },
   "next": {
     "title": "actio create",
-    "permalink": "/docs/cli/create"
+    "permalink": "/Actio/docs/cli/create"
   }
 }

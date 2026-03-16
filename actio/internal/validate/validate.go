@@ -47,17 +47,17 @@ func Validate(root string) ([]string, error) {
 
 	if _, err := os.Stat(indexPath); err != nil {
 		if os.IsNotExist(err) {
-			issues = append(issues, "missing actio/index.yaml")
+			issues = append(issues, fmt.Sprintf("missing %s", actio.StandardFiles["index"]))
 		} else {
-			return nil, fmt.Errorf("stat index.yaml: %w", err)
+			return nil, fmt.Errorf("stat %s: %w", actio.IndexFile, err)
 		}
 	} else {
 		data, err := os.ReadFile(indexPath)
 		if err != nil {
-			return nil, fmt.Errorf("read index.yaml: %w", err)
+			return nil, fmt.Errorf("read %s: %w", actio.IndexFile, err)
 		}
 		if err := yaml.Unmarshal(data, &idx); err != nil {
-			issues = append(issues, "index.yaml is not valid YAML")
+			issues = append(issues, fmt.Sprintf("%s is not valid YAML", actio.IndexFile))
 		} else {
 			issues = append(issues, validateIndexSchema(root, actRoot, idx)...)
 		}
@@ -105,31 +105,31 @@ func validateIndexSchema(root, actRoot string, idx Index) []string {
 	var issues []string
 
 	if idx.Version == 0 {
-		issues = append(issues, "index.yaml: version must be set and > 0")
+		issues = append(issues, fmt.Sprintf("%s: version must be set and > 0", actio.IndexFile))
 	}
 	if idx.Project.Name == "" {
-		issues = append(issues, "index.yaml: project.name must be set")
+		issues = append(issues, fmt.Sprintf("%s: project.name must be set", actio.IndexFile))
 	}
 
 	// Validate domains
 	for name, d := range idx.Domains {
 		if d.Architecture == "" {
-			issues = append(issues, fmt.Sprintf("index.yaml: domains.%s.architecture must be set", name))
+			issues = append(issues, fmt.Sprintf("%s: domains.%s.architecture must be set", actio.IndexFile, name))
 		} else {
 			path := filepath.Join(actRoot, d.Architecture)
 			if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
-				issues = append(issues, fmt.Sprintf("index.yaml: domains.%s.architecture references missing file: %s", name, rel))
+				issues = append(issues, fmt.Sprintf("%s: domains.%s.architecture references missing file: %s", actio.IndexFile, name, rel))
 			}
 		}
 
 		if d.Interfaces == "" {
-			issues = append(issues, fmt.Sprintf("index.yaml: domains.%s.interfaces must be set", name))
+			issues = append(issues, fmt.Sprintf("%s: domains.%s.interfaces must be set", actio.IndexFile, name))
 		} else {
 			path := filepath.Join(actRoot, d.Interfaces)
 			if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
-				issues = append(issues, fmt.Sprintf("index.yaml: domains.%s.interfaces references missing file: %s", name, rel))
+				issues = append(issues, fmt.Sprintf("%s: domains.%s.interfaces references missing file: %s", actio.IndexFile, name, rel))
 			}
 		}
 
@@ -137,38 +137,38 @@ func validateIndexSchema(root, actRoot string, idx Index) []string {
 			path := filepath.Join(actRoot, p)
 			if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
-				issues = append(issues, fmt.Sprintf("index.yaml: domains.%s.patterns references missing file: %s", name, rel))
+				issues = append(issues, fmt.Sprintf("%s: domains.%s.patterns references missing file: %s", actio.IndexFile, name, rel))
 			}
 		}
 	}
 
 	// Validate rules
 	if idx.Rules.Coding == "" {
-		issues = append(issues, "index.yaml: rules.coding must be set")
+		issues = append(issues, fmt.Sprintf("%s: rules.coding must be set", actio.IndexFile))
 	} else {
 		path := filepath.Join(actRoot, idx.Rules.Coding)
 		if _, err := os.Stat(path); err != nil {
 			rel, _ := filepath.Rel(root, path)
-			issues = append(issues, fmt.Sprintf("index.yaml: rules.coding references missing file: %s", rel))
+			issues = append(issues, fmt.Sprintf("%s: rules.coding references missing file: %s", actio.IndexFile, rel))
 		}
 	}
 
 	// Validate tasks
 	for taskName, t := range idx.Tasks {
 		if t.Domain == "" {
-			issues = append(issues, fmt.Sprintf("index.yaml: tasks.%s.domain must be set", taskName))
+			issues = append(issues, fmt.Sprintf("%s: tasks.%s.domain must be set", actio.IndexFile, taskName))
 		} else {
 			if _, ok := idx.Domains[t.Domain]; !ok {
-				issues = append(issues, fmt.Sprintf("index.yaml: tasks.%s.domain references unknown domain: %s", taskName, t.Domain))
+				issues = append(issues, fmt.Sprintf("%s: tasks.%s.domain references unknown domain: %s", actio.IndexFile, taskName, t.Domain))
 			}
 		}
 		if t.Guide == "" {
-			issues = append(issues, fmt.Sprintf("index.yaml: tasks.%s.guide must be set", taskName))
+			issues = append(issues, fmt.Sprintf("%s: tasks.%s.guide must be set", actio.IndexFile, taskName))
 		} else {
 			path := filepath.Join(actRoot, t.Guide)
 			if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
-				issues = append(issues, fmt.Sprintf("index.yaml: tasks.%s.guide references missing file: %s", taskName, rel))
+				issues = append(issues, fmt.Sprintf("%s: tasks.%s.guide references missing file: %s", actio.IndexFile, taskName, rel))
 			}
 		}
 	}

@@ -48,7 +48,7 @@ actio validate
 
 Actio provides a structured approach to AI context management:
 
-- **actio/index.yaml** - Project index and metadata
+- **actio/router.yaml** - Project index and metadata
 - **actio/architecture/** - System architecture documentation
 - **actio/interfaces/** - Contract definitions
 - **actio/patterns/** - Reusable patterns
