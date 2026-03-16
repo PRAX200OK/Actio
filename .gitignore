@@ -12,11 +12,11 @@
 *.out
 
 # Dependency directories (uncomment the next line if you want to ignore node_modules)
-.site/node_modules/
+site/node_modules/
 
 # Docusaurus build output
-.site/docusaurus/
-.site/build/
+site/.docusaurus/
+site/build/
 
 # Logs
 npm-debug.log*
