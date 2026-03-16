@@ -1,20 +1,24 @@
 /**
  * Actio docs – Cursor-like theme
- * Goal: clean, flat, dark-first docs UI with subtle borders + hovers.
+ * Black and white only. Footer is always pitch black.
  */
 
+/* ─── Dark mode (default) ────────────────────────────────────── */
+
 :root {
-  /* Brand (black and white only) */
-  --ifm-color-primary: #000000;
-  --ifm-color-primary-dark: #000000;
-  --ifm-color-primary-darker: #000000;
-  --ifm-color-primary-darkest: #000000;
+  /* Brand */
+  --ifm-color-primary: #ffffff;
+  --ifm-color-primary-dark: #e0e0e0;
+  --ifm-color-primary-darker: #cccccc;
+  --ifm-color-primary-darkest: #aaaaaa;
   --ifm-color-primary-light: #ffffff;
   --ifm-color-primary-lighter: #ffffff;
   --ifm-color-primary-lightest: #ffffff;
 
   /* Typography */
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   --ifm-heading-font-family: var(--ifm-font-family-base);
   --ifm-heading-font-weight: 700;
   --ifm-line-height-base: 1.7;
@@ -26,69 +30,117 @@
   --ifm-global-radius: 12px;
   --ifm-card-border-radius: 14px;
 
-  /* Pure black and white dark theme with gray for active content */
-  --actio-bg: #000000;
-  --actio-surface: #000000;
-  --actio-surface-2: #1a1a1a;
-  --actio-border: rgba(255, 255, 255, 0.15);
-  --actio-border-strong: rgba(255, 255, 255, 0.3);
-  --actio-text: #ffffff;
-  --actio-text-muted: rgba(255, 255, 255, 0.65);
-  --actio-link: #ffffff;
-  --actio-link-hover: #e0e0e0;
-  --actio-code-bg: rgba(255, 255, 255, 0.08);
-  --actio-gray-light: #f0f0f0;
-  --actio-gray: #888888;
-  --actio-gray-dark: #333333;
+  /* Surface scale: pure black → dark grays */
+  --actio-bg:        #000000;
+  --actio-surface:   #0a0a0a;
+  --actio-surface-2: #161616;
+  --actio-surface-3: #222222;
 
-  /* Map to Infima tokens */
-  --ifm-background-color: var(--actio-bg);
+  /* Borders (white-alpha on dark) */
+  --actio-border:       rgba(255, 255, 255, 0.12);
+  --actio-border-strong: rgba(255, 255, 255, 0.25);
+
+  /* Text */
+  --actio-text:       #ffffff;
+  --actio-text-muted: rgba(255, 255, 255, 0.5);
+  --actio-text-faint: rgba(255, 255, 255, 0.3);
+
+  /* Links */
+  --actio-link:       #ffffff;
+  --actio-link-hover: #cccccc;
+
+  /* Code */
+  --actio-code-bg: rgba(255, 255, 255, 0.07);
+
+  /* Footer — always pitch black with white text */
+  --actio-footer-bg:           #000000;
+  --actio-footer-border:       rgba(255, 255, 255, 0.1);
+  --actio-footer-text:         rgba(255, 255, 255, 0.5);
+  --actio-footer-text-hover:   #ffffff;
+  --actio-footer-title:        #ffffff;
+
+  /* Infima mappings */
+  --ifm-background-color:         var(--actio-bg);
   --ifm-background-surface-color: var(--actio-surface);
-  --ifm-navbar-background-color: var(--actio-bg);
-  --ifm-footer-background-color: var(--actio-bg);
-  --ifm-font-color-base: var(--actio-text);
-  --ifm-font-color-secondary: var(--actio-text-muted);
-  --ifm-toc-border-color: var(--actio-border);
-  --ifm-color-emphasis-200: var(--actio-border);
-  --ifm-color-emphasis-300: var(--actio-border-strong);
-  --ifm-code-background: var(--actio-code-bg);
+  --ifm-navbar-background-color:  var(--actio-bg);
+  --ifm-font-color-base:          var(--actio-text);
+  --ifm-font-color-secondary:     var(--actio-text-muted);
+  --ifm-toc-border-color:         var(--actio-border);
+  --ifm-color-emphasis-200:       var(--actio-border);
+  --ifm-color-emphasis-300:       var(--actio-border-strong);
+  --ifm-code-background:          var(--actio-code-bg);
+  --ifm-footer-background-color:  var(--actio-footer-bg);
+  --ifm-footer-color:             var(--actio-footer-text);
+  --ifm-footer-link-color:        var(--actio-footer-text);
+  --ifm-footer-link-hover-color:  var(--actio-footer-text-hover);
+  --ifm-footer-title-color:       var(--actio-footer-title);
 }
+
+/* ─── Light mode ─────────────────────────────────────────────── */
 
 html[data-theme='light'] {
-  --actio-bg: #ffffff;
-  --actio-surface: #ffffff;
-  --actio-surface-2: #f8f8f8;
-  --actio-border: rgba(0, 0, 0, 0.12);
-  --actio-border-strong: rgba(0, 0, 0, 0.2);
-  --actio-text: #000000;
-  --actio-text-muted: rgba(0, 0, 0, 0.6);
-  --actio-link: #000000;
-  --actio-link-hover: #333333;
-  --actio-code-bg: rgba(0, 0, 0, 0.06);
+  /* Brand */
+  --ifm-color-primary: #000000;
+  --ifm-color-primary-dark: #111111;
+  --ifm-color-primary-darker: #222222;
+  --ifm-color-primary-darkest: #333333;
+  --ifm-color-primary-light: #555555;
+  --ifm-color-primary-lighter: #777777;
+  --ifm-color-primary-lightest: #999999;
 
-  --ifm-background-color: var(--actio-bg);
+  /* Surface scale: pure white → light grays */
+  --actio-bg:        #ffffff;
+  --actio-surface:   #ffffff;
+  --actio-surface-2: #f5f5f5;
+  --actio-surface-3: #ebebeb;
+
+  /* Borders (black-alpha on light) */
+  --actio-border:        rgba(0, 0, 0, 0.1);
+  --actio-border-strong: rgba(0, 0, 0, 0.2);
+
+  /* Text */
+  --actio-text:       #000000;
+  --actio-text-muted: rgba(0, 0, 0, 0.5);
+  --actio-text-faint: rgba(0, 0, 0, 0.3);
+
+  /* Links */
+  --actio-link:       #000000;
+  --actio-link-hover: #333333;
+
+  /* Code */
+  --actio-code-bg: rgba(0, 0, 0, 0.05);
+
+  /* Footer — pitch black regardless of theme, always white text */
+  --actio-footer-bg:         #000000;
+  --actio-footer-border:     rgba(255, 255, 255, 0.1);
+  --actio-footer-text:       rgba(255, 255, 255, 0.5);
+  --actio-footer-text-hover: #ffffff;
+  --actio-footer-title:      #ffffff;
+
+  /* Infima mappings */
+  --ifm-background-color:         var(--actio-bg);
   --ifm-background-surface-color: var(--actio-surface);
-  --ifm-navbar-background-color: var(--actio-bg);
-  --ifm-footer-background-color: var(--actio-surface-2);
-  --ifm-font-color-base: var(--actio-text);
-  --ifm-font-color-secondary: var(--actio-text-muted);
-  --ifm-toc-border-color: var(--actio-border);
-  --ifm-color-emphasis-200: var(--actio-border);
-  --ifm-color-emphasis-300: var(--actio-border-strong);
-  --ifm-code-background: var(--actio-code-bg);
+  --ifm-navbar-background-color:  var(--actio-bg);
+  --ifm-font-color-base:          var(--actio-text);
+  --ifm-font-color-secondary:     var(--actio-text-muted);
+  --ifm-toc-border-color:         var(--actio-border);
+  --ifm-color-emphasis-200:       var(--actio-border);
+  --ifm-color-emphasis-300:       var(--actio-border-strong);
+  --ifm-code-background:          var(--actio-code-bg);
+  --ifm-footer-background-color:  var(--actio-footer-bg);
+  --ifm-footer-color:             var(--actio-footer-text);
+  --ifm-footer-link-color:        var(--actio-footer-text);
+  --ifm-footer-link-hover-color:  var(--actio-footer-text-hover);
+  --ifm-footer-title-color:       var(--actio-footer-title);
 }
 
-/* Links */
-.markdown a,
-.navbar__item.navbar__link,
+/* ─── Links ──────────────────────────────────────────────────── */
+
 a {
   color: var(--actio-link);
   text-decoration: none;
-  position: relative;
 }
 
-.markdown a:hover,
-.navbar__item.navbar__link:hover,
 a:hover {
   color: var(--actio-link-hover);
   text-decoration: underline;
@@ -100,7 +152,8 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-/* Navbar */
+/* ─── Navbar ─────────────────────────────────────────────────── */
+
 .navbar {
   border-bottom: 1px solid var(--actio-border);
   box-shadow: none;
@@ -143,30 +196,41 @@ html[data-theme='light'] .navbar {
 }
 
 .navbar__link:hover {
-  background-color: var(--actio-gray-dark);
-  color: #ffffff;
+  background-color: var(--actio-surface-2);
+  color: var(--actio-text);
+  text-decoration: none;
 }
 
 html[data-theme='light'] .navbar__link:hover {
-  background-color: #f0f0f0;
-  color: #000000;
+  background-color: var(--actio-surface-2);
+  color: var(--actio-text);
 }
 
-html[data-theme='light'] .navbar__link:hover {
-  background-color: #f0f0f0;
-  color: #000000;
-}
+/* ─── Footer ─────────────────────────────────────────────────── */
 
-/* Footer */
+/* Always pitch black — variables are identical in both themes */
 .footer {
-  border-top: 1px solid var(--actio-border);
+  background-color: var(--actio-footer-bg);
+  color: var(--actio-footer-text);
+  border-top: 1px solid var(--actio-footer-border);
+  padding: 3rem var(--ifm-spacing-horizontal, 1.5rem);
   margin-top: 4rem;
-  padding-top: 3rem;
 }
 
-.footer__col h4 {
+.footer__title {
+  color: var(--actio-footer-title);
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.footer__link-item {
+  color: var(--actio-footer-text);
+  transition: color 150ms ease-out;
+}
+
+.footer__link-item:hover {
+  color: var(--actio-footer-text-hover);
+  text-decoration: none;
 }
 
 .footer__item {
@@ -174,11 +238,15 @@ html[data-theme='light'] .navbar__link:hover {
 }
 
 .footer__copyright {
-  color: var(--actio-text-muted);
+  color: var(--actio-footer-text);
   font-size: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--actio-footer-border);
 }
 
-/* Docs: content readability */
+/* ─── Docs content ───────────────────────────────────────────── */
+
 .markdown h1:first-child {
   font-size: 2.2rem;
   font-weight: 800;
@@ -219,7 +287,8 @@ html[data-theme='light'] .navbar__link:hover {
   width: 100%;
 }
 
-/* Sidebar */
+/* ─── Sidebar ────────────────────────────────────────────────── */
+
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--actio-border);
 }
@@ -234,24 +303,24 @@ html[data-theme='light'] .navbar__link:hover {
 }
 
 .theme-doc-sidebar-item-link.theme-doc-sidebar-item-link--active {
-  background-color: var(--actio-gray-dark);
-  color: #ffffff;
+  background-color: var(--actio-surface-3);
+  color: var(--actio-text);
   font-weight: 600;
 }
 
 html[data-theme='light'] .theme-doc-sidebar-item-link.theme-doc-sidebar-item-link--active {
-  background-color: #f0f0f0;
-  color: #000000;
+  background-color: var(--actio-surface-3);
+  color: var(--actio-text);
 }
 
-/* Subtle section separation in docs */
 .theme-doc-markdown > header {
   border-bottom: 1px solid var(--actio-border);
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
 
-/* Search input + general inputs */
+/* ─── Inputs ─────────────────────────────────────────────────── */
+
 input,
 textarea,
 select {
@@ -274,27 +343,29 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--actio-text);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
 }
 
 html[data-theme='light'] input:focus,
 html[data-theme='light'] textarea:focus,
 html[data-theme='light'] select:focus {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
-/* Outline / focus (Cursor-like) */
+/* ─── Focus ring ─────────────────────────────────────────────── */
+
 :focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline: 2px solid rgba(255, 255, 255, 0.7);
   outline-offset: 2px;
 }
 
 html[data-theme='light'] :focus-visible {
-  outline: 2px solid rgba(0, 0, 0, 0.8);
+  outline: 2px solid rgba(0, 0, 0, 0.7);
   outline-offset: 2px;
 }
 
-/* Tables */
+/* ─── Tables ─────────────────────────────────────────────────── */
+
 .markdown table {
   border: 1px solid var(--actio-border);
   border-radius: 10px;
@@ -320,17 +391,13 @@ html[data-theme='light'] :focus-visible {
 }
 
 .markdown table tbody tr:hover {
-  background: var(--actio-gray-dark);
-  color: #ffffff;
+  background: var(--actio-surface-2);
 }
 
-html[data-theme='light'] .markdown table tbody tr:hover {
-  background: #f8f8f8;
-}
+/* ─── Alerts / callouts ──────────────────────────────────────── */
 
-/* Make callouts match the theme */
 .alert {
-  border: 1.5px solid var(--actio-border);
+  border: 1px solid var(--actio-border);
   border-radius: 10px;
   background: var(--actio-surface-2);
   padding: 1rem 1.25rem;
@@ -338,11 +405,7 @@ html[data-theme='light'] .markdown table tbody tr:hover {
 }
 
 .alert--info {
-  border-left: 4px solid #ffffff;
-}
-
-html[data-theme='light'] .alert--info {
-  border-left: 4px solid #000000;
+  border-left: 4px solid var(--actio-text);
 }
 
 .alert__title {
@@ -350,7 +413,8 @@ html[data-theme='light'] .alert--info {
   margin-bottom: 0.5rem;
 }
 
-/* Cards */
+/* ─── Cards ──────────────────────────────────────────────────── */
+
 .card {
   background: var(--actio-surface);
   border: 1px solid var(--actio-border);
@@ -362,14 +426,10 @@ html[data-theme='light'] .alert--info {
   transform: translateY(-2px);
   border-color: var(--actio-border-strong);
   background: var(--actio-surface-2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-html[data-theme='light'] .card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
+/* ─── Code blocks ────────────────────────────────────────────── */
 
-/* Code blocks */
 .prism-code {
   border-radius: 10px;
   border: 1px solid var(--actio-border);
@@ -383,7 +443,6 @@ html[data-theme='light'] .card:hover {
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
-/* Inline code */
 code {
   border-radius: 6px;
   background: var(--actio-code-bg);
@@ -393,7 +452,8 @@ code {
   color: inherit;
 }
 
-/* Buttons */
+/* ─── Buttons ────────────────────────────────────────────────── */
+
 .button {
   font-weight: 600;
   transition: all 200ms ease-out;
@@ -401,18 +461,20 @@ code {
   padding: 0.6rem 1.2rem;
 }
 
+/* Dark: white button */
 .button--primary {
-  background: #000000;
-  border: 1.5px solid #000000;
-  color: #ffffff;
+  background: #ffffff;
+  border: 1.5px solid #ffffff;
+  color: #000000;
 }
 
 .button--primary:hover {
-  background: #222222;
-  border-color: #222222;
-  color: #ffffff;
+  background: #e0e0e0;
+  border-color: #e0e0e0;
+  color: #000000;
 }
 
+/* Light: black button */
 html[data-theme='light'] .button--primary {
   background: #000000;
   border-color: #000000;
@@ -422,28 +484,33 @@ html[data-theme='light'] .button--primary {
 html[data-theme='light'] .button--primary:hover {
   background: #222222;
   border-color: #222222;
-}
-
-.button--secondary {
-  background: #222222;
-  border: 1.5px solid #222222;
   color: #ffffff;
 }
 
-.button--secondary:hover {
-  background: #333333;
-  border-color: #333333;
-  color: #ffffff;
+/* Dark: ghost button — !important overrides Infima's --ifm-color-secondary */
+html[data-theme='dark'] .button--secondary,
+html:not([data-theme='light']) .button--secondary {
+  background: transparent;
+  border: 1.5px solid var(--actio-border-strong);
+  color: #ffffff !important;
 }
 
+html[data-theme='dark'] .button--secondary:hover,
+html:not([data-theme='light']) .button--secondary:hover {
+  background: var(--actio-surface-2);
+  border-color: var(--actio-border-strong);
+  color: #ffffff !important;
+}
+
+/* Light: ghost button */
 html[data-theme='light'] .button--secondary {
-  background: #f0f0f0;
-  border: 1.5px solid #f0f0f0;
-  color: #000000;
+  background: transparent;
+  border: 1.5px solid var(--actio-border-strong);
+  color: #000000 !important;
 }
 
 html[data-theme='light'] .button--secondary:hover {
-  background: #e0e0e0;
-  border-color: #e0e0e0;
-  color: #000000;
+  background: var(--actio-surface-2);
+  border-color: var(--actio-border-strong);
+  color: #000000 !important;
 }

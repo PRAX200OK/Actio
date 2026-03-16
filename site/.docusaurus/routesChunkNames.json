@@ -1,94 +1,137 @@
 {
-  "/Actio/docs-8f5": {
-    "__comp": "5e95c892",
+  "/Actio/__docusaurus/debug-efd": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "aba21aa0"
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    }
+  },
+  "/Actio/__docusaurus/debug/config-628": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    }
+  },
+  "/Actio/__docusaurus/debug/content-dc7": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    },
+    "__props": "__props---actio-docusaurus-debug-content-46-c-cbb"
+  },
+  "/Actio/__docusaurus/debug/globalData-aae": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    }
+  },
+  "/Actio/__docusaurus/debug/metadata-8ed": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    }
+  },
+  "/Actio/__docusaurus/debug/registry-337": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    }
+  },
+  "/Actio/__docusaurus/debug/routes-458": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---actio-docusaurus-debugb-38-c3d"
+    }
+  },
+  "/Actio/docs-8f5": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---actio-docsaba-fb1"
     }
   },
   "/Actio/docs-04c": {
-    "__comp": "a7bd4aaa",
-    "__props": "61e0f80d"
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---actio-docs-61-e-688"
   },
   "/Actio/docs-54b": {
-    "__comp": "a94703ab"
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/Actio/docs/cli/create-2a9": {
-    "__comp": "17896441",
-    "content": "eceb5f47"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-cli-createece-8fb"
   },
   "/Actio/docs/cli/doctor-5c2": {
-    "__comp": "17896441",
-    "content": "8ba30265"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-cli-doctor-8-ba-52b"
   },
   "/Actio/docs/cli/init-5eb": {
-    "__comp": "17896441",
-    "content": "43ea9c74"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-cli-init-43-e-2bd"
   },
   "/Actio/docs/cli/mcp-a06": {
-    "__comp": "17896441",
-    "content": "eeddcf2d"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-cli-mcpeed-a9e"
   },
   "/Actio/docs/cli/validate-08e": {
-    "__comp": "17896441",
-    "content": "f0e95c59"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-cli-validatef-0-e-7ea"
   },
   "/Actio/docs/cli/version-845": {
-    "__comp": "17896441",
-    "content": "7f192374"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-cli-version-7-f-1-cb3"
   },
   "/Actio/docs/concepts/domains-b05": {
-    "__comp": "17896441",
-    "content": "b09be008"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-concepts-domainsb-09-2ad"
   },
   "/Actio/docs/concepts/index-yaml-dbf": {
-    "__comp": "17896441",
-    "content": "a713916c"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-concepts-index-yamla-71-b05"
   },
   "/Actio/docs/concepts/rules-and-tasks-df6": {
-    "__comp": "17896441",
-    "content": "55be8792"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-concepts-rules-and-tasks-55-b-40d"
   },
   "/Actio/docs/concepts/sidecar-e08": {
-    "__comp": "17896441",
-    "content": "a7133f50"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-concepts-sidecara-71-beb"
   },
   "/Actio/docs/getting-started/create-project-8e8": {
-    "__comp": "17896441",
-    "content": "80a63cae"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-getting-started-create-project-80-a-862"
   },
   "/Actio/docs/getting-started/installation-95b": {
-    "__comp": "17896441",
-    "content": "54f44165"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-getting-started-installation-54-f-f01"
   },
   "/Actio/docs/getting-started/quick-start-51a": {
-    "__comp": "17896441",
-    "content": "588bd741"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-getting-started-quick-start-588-5b7"
   },
   "/Actio/docs/guides/mcp-integration-60f": {
-    "__comp": "17896441",
-    "content": "b9b89239"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-guides-mcp-integrationb-9-b-480"
   },
   "/Actio/docs/guides/plugins-757": {
-    "__comp": "17896441",
-    "content": "bb350c59"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-guides-pluginsbb-3-e67"
   },
   "/Actio/docs/guides/schema-validation-7ae": {
-    "__comp": "17896441",
-    "content": "f992bd48"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-guides-schema-validationf-99-f97"
   },
   "/Actio/docs/guides/use-cases-7e6": {
-    "__comp": "17896441",
-    "content": "ca6a5dd6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-guides-use-casesca-6-989"
   },
   "/Actio/docs/intro-6f9": {
-    "__comp": "17896441",
-    "content": "0e384e19"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---actio-docs-intro-0-e-3-0aa"
   },
   "/Actio/-b06": {
-    "__comp": "9dd8a0d2",
+    "__comp": "__comp---site-src-pages-index-jsx-9-dd-cb1",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---actio-a-74-f63"
     },
-    "config": "5e9f5e1a"
+    "config": "config---actio-5-e-9-01a"
   }
 }

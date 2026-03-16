@@ -3,6 +3,41 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/Actio/__docusaurus/debug',
+    component: ComponentCreator('/Actio/__docusaurus/debug', 'efd'),
+    exact: true
+  },
+  {
+    path: '/Actio/__docusaurus/debug/config',
+    component: ComponentCreator('/Actio/__docusaurus/debug/config', '628'),
+    exact: true
+  },
+  {
+    path: '/Actio/__docusaurus/debug/content',
+    component: ComponentCreator('/Actio/__docusaurus/debug/content', 'dc7'),
+    exact: true
+  },
+  {
+    path: '/Actio/__docusaurus/debug/globalData',
+    component: ComponentCreator('/Actio/__docusaurus/debug/globalData', 'aae'),
+    exact: true
+  },
+  {
+    path: '/Actio/__docusaurus/debug/metadata',
+    component: ComponentCreator('/Actio/__docusaurus/debug/metadata', '8ed'),
+    exact: true
+  },
+  {
+    path: '/Actio/__docusaurus/debug/registry',
+    component: ComponentCreator('/Actio/__docusaurus/debug/registry', '337'),
+    exact: true
+  },
+  {
+    path: '/Actio/__docusaurus/debug/routes',
+    component: ComponentCreator('/Actio/__docusaurus/debug/routes', '458'),
+    exact: true
+  },
+  {
     path: '/Actio/docs',
     component: ComponentCreator('/Actio/docs', '8f5'),
     routes: [
