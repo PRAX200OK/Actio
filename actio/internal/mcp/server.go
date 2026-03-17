@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+
 	"actio/internal/actio"
 )
 
@@ -32,11 +33,22 @@ type respError struct {
 	Message string `json:"message"`
 }
 
+type server struct {
+	root      string
+	stderr    io.Writer
+	pluginMgr *pluginManager
+}
+
 // ServeStdIO starts a minimal MCP-style JSON-RPC server over stdio.
 // It intentionally supports a narrow tool surface focused on Actio context:
 // - mcp.listResources
 // - mcp.readResource
 func ServeStdIO(ctx context.Context, root string, stderr io.Writer) error {
+	s := &server{
+		root:      root,
+		stderr:    stderr,
+		pluginMgr: newPluginManager(root, stderr, nil),
+	}
 	in := bufio.NewScanner(os.Stdin)
 
 	for in.Scan() {
@@ -51,7 +63,7 @@ func ServeStdIO(ctx context.Context, root string, stderr io.Writer) error {
 			continue
 		}
 
-		resp := handleRequest(root, req)
+		resp := s.handleRequest(ctx, req)
 		data, err := json.Marshal(resp)
 		if err != nil {
 			fmt.Fprintf(stderr, "failed to encode response: %v\n", err)
@@ -66,14 +78,16 @@ func ServeStdIO(ctx context.Context, root string, stderr io.Writer) error {
 	return nil
 }
 
-func handleRequest(root string, req request) response {
+func (s *server) handleRequest(ctx context.Context, req request) response {
 	switch req.Method {
 	case "mcp.listResources":
+		actioRes := listResources(s.root)
+		pluginRes, _ := s.pluginMgr.listAllResources(ctx)
 		return response{
 			JsonRPC: "2.0",
 			ID:      req.ID,
 			Result: map[string]any{
-				"resources": listResources(root),
+				"resources": append(actioRes, pluginRes...),
 			},
 		}
 	case "mcp.readResource":
@@ -83,9 +97,22 @@ func handleRequest(root string, req request) response {
 		if err := json.Unmarshal(req.Params, &params); err != nil {
 			return errorResponse(req.ID, -32602, "invalid params")
 		}
-		content, err := readResource(root, params.URI)
-		if err != nil {
-			return errorResponse(req.ID, -32001, err.Error())
+		var content string
+		if pluginName, origURI, ok := parsePluginURI(params.URI); ok {
+			c, err := s.pluginMgr.getClient(ctx, pluginName)
+			if err != nil {
+				return errorResponse(req.ID, -32001, err.Error())
+			}
+			content, err = c.ReadResource(ctx, origURI)
+			if err != nil {
+				return errorResponse(req.ID, -32001, err.Error())
+			}
+		} else {
+			var err error
+			content, err = readResource(s.root, params.URI)
+			if err != nil {
+				return errorResponse(req.ID, -32001, err.Error())
+			}
 		}
 		return response{
 			JsonRPC: "2.0",

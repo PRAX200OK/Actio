@@ -1,7 +1,10 @@
 package mcp
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"testing"
@@ -85,7 +88,10 @@ func TestHandleRequest_ListResources(t *testing.T) {
 	_ = os.WriteFile(filepath.Join(actRoot, "router.yaml"), []byte("x"), 0o644)
 
 	req := request{JsonRPC: "2.0", ID: json.RawMessage(`1`), Method: "mcp.listResources", Params: json.RawMessage(`{}`)}
-	resp := handleRequest(dir, req)
+	s := &server{root: dir, pluginMgr: newPluginManager(dir, io.Discard, func(ctx context.Context, cfg pluginConfig) (pluginClient, error) {
+		return nil, fmt.Errorf("no plugins")
+	})}
+	resp := s.handleRequest(context.Background(), req)
 	if resp.Error != nil {
 		t.Fatalf("unexpected error: %v", resp.Error)
 	}
@@ -104,7 +110,10 @@ func TestHandleRequest_ReadResource(t *testing.T) {
 
 	params, _ := json.Marshal(map[string]string{"uri": "actio://actio/router.yaml"})
 	req := request{JsonRPC: "2.0", ID: json.RawMessage(`2`), Method: "mcp.readResource", Params: params}
-	resp := handleRequest(dir, req)
+	s := &server{root: dir, pluginMgr: newPluginManager(dir, io.Discard, func(ctx context.Context, cfg pluginConfig) (pluginClient, error) {
+		return nil, fmt.Errorf("no plugins")
+	})}
+	resp := s.handleRequest(context.Background(), req)
 	if resp.Error != nil {
 		t.Fatalf("unexpected error: %v", resp.Error)
 	}
@@ -116,7 +125,10 @@ func TestHandleRequest_ReadResource(t *testing.T) {
 
 func TestHandleRequest_MethodNotFound(t *testing.T) {
 	req := request{JsonRPC: "2.0", ID: json.RawMessage(`3`), Method: "unknown.method"}
-	resp := handleRequest(t.TempDir(), req)
+	s := &server{root: t.TempDir(), pluginMgr: newPluginManager(t.TempDir(), io.Discard, func(ctx context.Context, cfg pluginConfig) (pluginClient, error) {
+		return nil, fmt.Errorf("no plugins")
+	})}
+	resp := s.handleRequest(context.Background(), req)
 	if resp.Error == nil {
 		t.Fatal("expected error for unknown method")
 	}
