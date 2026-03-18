@@ -1,6 +1,6 @@
 # Rules and tasks
 
-Actio separates **rules** (what must always be true) from **tasks** (how to do a specific thing). Both are referenced from `index.yaml`.
+Actio separates **rules** (what must always be true) from **tasks** (how to do a specific thing). Both are referenced from `actio/router.yaml`.
 
 ## Rules
 
@@ -20,7 +20,7 @@ Example content:
 # Coding Rules
 
 - Follow the architecture in `actio/architecture/system.md`.
-- Do not introduce new domains without updating `actio/index.yaml`.
+- Do not introduce new domains without updating `actio/router.yaml`.
 - Prefer interfaces documented under `actio/interfaces/`.
 - Avoid cross-domain imports that bypass documented boundaries.
 ```
@@ -44,12 +44,12 @@ tasks:
 ```
 
 - **domain** — Must match a key under `domains`. Provides which architecture/interfaces/patterns apply.
-- **guide** — Path to a markdown file (relative to `act/`) that describes the steps.
+- **guide** — Path to a markdown file (relative to `actio/`) that describes the steps.
 
 ### How agents use tasks
 
 1. User says: “Do the add_connector task.”
-2. Agent reads `index.yaml`, finds task `add_connector`.
+2. Agent reads `actio/router.yaml`, finds task `add_connector`.
 3. Agent loads the **domain** `connectors` (architecture, interfaces, patterns).
 4. Agent reads the **guide** `tasks/add_connector.md`.
 5. Agent follows the guide and respects the domain context.
@@ -58,15 +58,15 @@ This gives **minimal, deterministic context** per task instead of “read the wh
 
 ### Example guide
 
-**act/tasks/add_connector.md:**
+**actio/tasks/add_connector.md:**
 
 ```markdown
 # Add New Connector
 
-1. Read `act/architecture/system.md` for existing domains.
-2. Add a contract in `act/interfaces/contracts.yaml` if needed.
-3. Document the pattern in `act/patterns/` if reusable.
-4. Implement following `act/rules/coding_rules.md`.
+1. Read `actio/architecture/system.md` for existing domains.
+2. Add a contract in `actio/interfaces/contracts.yaml` if needed.
+3. Document the pattern in `actio/patterns/` if reusable.
+4. Implement following `actio/rules/coding_rules.md`.
 ```
 
 ## Validation
@@ -75,7 +75,7 @@ This gives **minimal, deterministic context** per task instead of “read the wh
 - Every task’s **domain** must exist in **domains**.
 - Every task’s **guide** file must exist.
 
-Run `act validate` to check.
+Run `actio validate` to check.
 
 ## Next
 

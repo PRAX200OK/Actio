@@ -35,13 +35,14 @@ Actio validates `actio/router.yaml` against a **schema** and checks **referentia
 
 ### 5. Plugins
 
-- YAML plugins in `act/plugins/` are loaded; their **requiredFiles** are checked for existence.
+- YAML plugins in `actio/plugins/` are loaded; their **requiredFiles** are checked for existence.
+- The `actio/scripts/` directory is created by `actio init` and `actio create` but is **optional** for validation (not required by `actio validate`).
 
 ## Error messages
 
 Validation returns **human-readable issues**, for example:
 
-- `missing act/index.yaml`
+- `missing actio/router.yaml`
 - `router.yaml: version must be set and > 0`
 - `router.yaml: project.name must be set`
 - `router.yaml: domains.connectors.architecture references missing file: actio/architecture/system.md`

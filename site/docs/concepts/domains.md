@@ -2,7 +2,7 @@
 
 **Domains** in Actio are named areas of your system (e.g. `connectors`, `api`, `billing`). Each domain has its own architecture, interfaces, and patterns so agents get scoped context.
 
-## Definition in index.yaml
+## Definition in router.yaml
 
 ```yaml
 domains:

@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
-	"actio/internal/plugins"
 	"actio/internal/actio"
+	"actio/internal/plugins"
 
 	"gopkg.in/yaml.v3"
 )
 
-// Index models the Actio index.yaml schema for validation.
+// Index models the Actio router.yaml schema for validation.
 type Index struct {
 	Version int `yaml:"version"`
 
@@ -80,6 +81,7 @@ func Validate(root string) ([]string, error) {
 	// Basic module files
 	requiredFiles := []string{
 		filepath.Join(root, actio.StandardFiles["architecture"]),
+		filepath.Join(root, actio.StandardFiles["interfaces"]),
 		filepath.Join(root, actio.StandardFiles["rules"]),
 		filepath.Join(root, actio.StandardFiles["tasks"]),
 	}
@@ -101,6 +103,15 @@ func Validate(root string) ([]string, error) {
 	return issues, nil
 }
 
+// pathUnderActRoot reports whether cleanPath is under actRoot (no path traversal out of actio/).
+func pathUnderActRoot(actRoot, cleanPath string) bool {
+	rel, err := filepath.Rel(actRoot, cleanPath)
+	if err != nil {
+		return false
+	}
+	return rel != ".." && !strings.HasPrefix(rel, ".."+string(filepath.Separator))
+}
+
 func validateIndexSchema(root, actRoot string, idx Index) []string {
 	var issues []string
 
@@ -116,8 +127,10 @@ func validateIndexSchema(root, actRoot string, idx Index) []string {
 		if d.Architecture == "" {
 			issues = append(issues, fmt.Sprintf("%s: domains.%s.architecture must be set", actio.IndexFile, name))
 		} else {
-			path := filepath.Join(actRoot, d.Architecture)
-			if _, err := os.Stat(path); err != nil {
+			path := filepath.Clean(filepath.Join(actRoot, d.Architecture))
+			if !pathUnderActRoot(actRoot, path) {
+				issues = append(issues, fmt.Sprintf("%s: domains.%s.architecture path escapes actio/", actio.IndexFile, name))
+			} else if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
 				issues = append(issues, fmt.Sprintf("%s: domains.%s.architecture references missing file: %s", actio.IndexFile, name, rel))
 			}
@@ -126,16 +139,20 @@ func validateIndexSchema(root, actRoot string, idx Index) []string {
 		if d.Interfaces == "" {
 			issues = append(issues, fmt.Sprintf("%s: domains.%s.interfaces must be set", actio.IndexFile, name))
 		} else {
-			path := filepath.Join(actRoot, d.Interfaces)
-			if _, err := os.Stat(path); err != nil {
+			path := filepath.Clean(filepath.Join(actRoot, d.Interfaces))
+			if !pathUnderActRoot(actRoot, path) {
+				issues = append(issues, fmt.Sprintf("%s: domains.%s.interfaces path escapes actio/", actio.IndexFile, name))
+			} else if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
 				issues = append(issues, fmt.Sprintf("%s: domains.%s.interfaces references missing file: %s", actio.IndexFile, name, rel))
 			}
 		}
 
 		for _, p := range d.Patterns {
-			path := filepath.Join(actRoot, p)
-			if _, err := os.Stat(path); err != nil {
+			path := filepath.Clean(filepath.Join(actRoot, p))
+			if !pathUnderActRoot(actRoot, path) {
+				issues = append(issues, fmt.Sprintf("%s: domains.%s.patterns path escapes actio/", actio.IndexFile, name))
+			} else if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
 				issues = append(issues, fmt.Sprintf("%s: domains.%s.patterns references missing file: %s", actio.IndexFile, name, rel))
 			}
@@ -146,8 +163,10 @@ func validateIndexSchema(root, actRoot string, idx Index) []string {
 	if idx.Rules.Coding == "" {
 		issues = append(issues, fmt.Sprintf("%s: rules.coding must be set", actio.IndexFile))
 	} else {
-		path := filepath.Join(actRoot, idx.Rules.Coding)
-		if _, err := os.Stat(path); err != nil {
+		path := filepath.Clean(filepath.Join(actRoot, idx.Rules.Coding))
+		if !pathUnderActRoot(actRoot, path) {
+			issues = append(issues, fmt.Sprintf("%s: rules.coding path escapes actio/", actio.IndexFile))
+		} else if _, err := os.Stat(path); err != nil {
 			rel, _ := filepath.Rel(root, path)
 			issues = append(issues, fmt.Sprintf("%s: rules.coding references missing file: %s", actio.IndexFile, rel))
 		}
@@ -165,8 +184,10 @@ func validateIndexSchema(root, actRoot string, idx Index) []string {
 		if t.Guide == "" {
 			issues = append(issues, fmt.Sprintf("%s: tasks.%s.guide must be set", actio.IndexFile, taskName))
 		} else {
-			path := filepath.Join(actRoot, t.Guide)
-			if _, err := os.Stat(path); err != nil {
+			path := filepath.Clean(filepath.Join(actRoot, t.Guide))
+			if !pathUnderActRoot(actRoot, path) {
+				issues = append(issues, fmt.Sprintf("%s: tasks.%s.guide path escapes actio/", actio.IndexFile, taskName))
+			} else if _, err := os.Stat(path); err != nil {
 				rel, _ := filepath.Rel(root, path)
 				issues = append(issues, fmt.Sprintf("%s: tasks.%s.guide references missing file: %s", actio.IndexFile, taskName, rel))
 			}

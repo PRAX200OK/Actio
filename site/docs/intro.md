@@ -22,10 +22,11 @@ Actio adds a small **sidecar** to your repo: an `actio/` directory and an `ENTRY
 
 | Feature | Description |
 |--------|-------------|
-| **Sidecar layout** | `actio/` with `architecture/`, `interfaces/`, `patterns/`, `rules/`, `tasks/` |
+| **Sidecar layout** | `actio/` with `architecture/`, `interfaces/`, `patterns/`, `rules/`, `tasks/`, `scripts/` |
 | **Index router** | `router.yaml` routes agents to the right docs per domain and task |
-| **CLI** | `actio create`, `actio init`, `actio validate`, `actio doctor`, `actio mcp` |
+| **CLI** | `actio create`, `actio init`, `actio validate`, `actio doctor`, `actio mcp`, `actio version` |
 | **Schema validation** | Index and referenced files are validated |
+| **Scripts** | `actio/scripts/` — single file **manifest.yaml** (declarative list and usage) |
 | **Plugins** | YAML plugins under `actio/plugins/` for extra checks |
 | **MCP server** | Expose Actio context to AI tools over stdio |
 

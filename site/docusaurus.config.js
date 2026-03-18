@@ -49,7 +49,7 @@ const config = {
       navbar: {
         title: 'Actio',
         logo: {
-          alt: 'ACT Framework',
+          alt: 'Actio',
           src: 'img/logo.svg',
         },
         items: [
@@ -71,8 +71,9 @@ const config = {
             items: [
               { label: 'Introduction', to: '/docs/intro' },
               { label: 'Getting Started', to: '/docs/getting-started/installation' },
-              { label: 'Concepts', to: '/docs/concepts/sidecar' },
+              { label: 'Concepts (sidecar, scripts, manifest)', to: '/docs/concepts/sidecar' },
               { label: 'CLI Reference', to: '/docs/cli/create' },
+              { label: 'MCP & scripts', to: '/docs/guides/mcp-integration' },
             ],
           },
           {

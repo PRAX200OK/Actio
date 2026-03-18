@@ -81,6 +81,21 @@ func TestReadResource_NotFound(t *testing.T) {
 	}
 }
 
+func TestReadResource_PathTraversalRejected(t *testing.T) {
+	dir := t.TempDir()
+	actRoot := filepath.Join(dir, "actio")
+	_ = os.MkdirAll(actRoot, 0o755)
+	_ = os.WriteFile(filepath.Join(actRoot, "router.yaml"), []byte("x"), 0o644)
+
+	_, err := readResource(dir, "actio://../actio/router.yaml")
+	if err == nil {
+		t.Fatal("expected error for path traversal URI")
+	}
+	if _, err := readResource(dir, "actio://actio/../../../etc/passwd"); err == nil {
+		t.Fatal("expected error for path traversal out of root")
+	}
+}
+
 func TestHandleRequest_ListResources(t *testing.T) {
 	dir := t.TempDir()
 	actRoot := filepath.Join(dir, "actio")

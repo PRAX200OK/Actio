@@ -19,6 +19,7 @@ your-repo/
     ├── patterns/
     ├── rules/
     ├── tasks/
+    ├── scripts/     # Scripts for the AI agent to execute
     └── plugins/     # Optional
 ```
 
@@ -32,6 +33,7 @@ your-repo/
 | **actio/patterns/** | Reusable patterns (e.g. "Snowflake connector", "event handler") |
 | **actio/rules/** | Coding and architectural rules agents must follow |
 | **actio/tasks/** | Task guides (e.g. "add new connector", "deploy") |
+| **actio/scripts/** | Scripts the AI agent can run (Python by default); **manifest.yaml** is the single maintained file (declarative list and usage) |
 | **actio/plugins/** | Optional YAML plugins for extra validation |
 
 ## Contract with agents

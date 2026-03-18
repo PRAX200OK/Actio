@@ -10,7 +10,9 @@ From any directory:
 actio create my-app
 ```
 
-This creates:
+When run in a terminal, you’ll be asked to choose a project structure: **minimal** (core only), **standard** (adds scripts), or **full** (adds scripts and plugin dirs). You can skip the prompt with `--preset=minimal`, `--preset=standard`, or `--preset=full`. See [actio create](/docs/cli/create) for details.
+
+This creates (standard preset):
 
 ```
 my-app/
@@ -26,8 +28,11 @@ my-app/
     │   └── pattern.md
     ├── rules/
     │   └── rules.md
-    └── tasks/
-        └── task.md
+    ├── tasks/
+    │   └── task.md
+    └── scripts/
+        ├── manifest.yaml   # single maintained file: list scripts and usage
+        └── example.py
 ```
 
 ## 2. Validate
@@ -48,7 +53,7 @@ cd /path/to/your/repo
 actio init
 ```
 
-This adds the `actio/` sidecar and `ACTIO.md` without overwriting existing files.
+You can choose the same structure presets (minimal, standard, full) as with `actio create`. This adds the `actio/` sidecar and `ENTRYPOINT.yaml` without overwriting existing files.
 
 ## 4. Check health
 

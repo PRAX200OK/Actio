@@ -34,4 +34,4 @@ Actio doctor found issues:
 
 ## See also
 
-- [act validate](/docs/cli/validate) — strict validation with non-zero exit on failure.
+- [actio validate](/docs/cli/validate) — strict validation with non-zero exit on failure.

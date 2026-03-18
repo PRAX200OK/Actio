@@ -54,6 +54,7 @@ Actio provides a structured approach to AI context management:
 - **actio/patterns/** - Reusable patterns
 - **actio/rules/** - Coding rules and constraints
 - **actio/tasks/** - Task-specific guides
+- **actio/scripts/** - Scripts the AI agent can run (e.g. build, lint, codegen)
 
 ## Contributing
 

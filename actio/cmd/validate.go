@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"os"
+	"path/filepath"
 
 	"actio/internal/validate"
 
@@ -11,17 +11,23 @@ import (
 
 func init() {
 	rootCmd.AddCommand(validateCmd)
+	validateCmd.Flags().StringP("path", "C", ".", "Path to project root (default: current directory)")
 }
 
 var validateCmd = &cobra.Command{
 	Use:   "validate",
 	Short: "Validate Actio sidecar structure and configuration",
+	Long:  "Checks router.yaml, required dirs/files, and referential integrity. Exits non-zero if there are issues.",
+	Example: `  actio validate
+  actio validate -C /path/to/project
+  actio validate --path ./my-app`,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		cwd, err := os.Getwd()
+		path, _ := cmd.Flags().GetString("path")
+		root, err := filepath.Abs(path)
 		if err != nil {
-			return fmt.Errorf("get current directory: %w", err)
+			return fmt.Errorf("resolve path: %w", err)
 		}
-		issues, err := validate.Validate(cwd)
+		issues, err := validate.Validate(root)
 		if err != nil {
 			return fmt.Errorf("validation failed: %w", err)
 		}

@@ -12,7 +12,7 @@ cd actio
 
 2. Build the project:
 ```bash
-cd app
+cd actio
 go build .
 ```
 

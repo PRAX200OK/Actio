@@ -39,7 +39,8 @@ Actio is **use-case agnostic**. The same sidecar layout and index work for many 
 - **Tasks** = runbooks (e.g. “database incident,” “rollback,” “scale up”).
 - **Guides** = step-by-step markdown.
 - **Rules** = operational constraints (e.g. “no direct prod access from scripts”).
+- **Scripts** = put automation in `actio/scripts/` so the agent can run build, lint, or codegen when needed.
 
 ---
 
-Pick domains and tasks that match your workflow; the framework only enforces structure and references, not the content.
+Pick domains, tasks, and scripts that match your workflow; the framework only enforces structure and references, not the content.

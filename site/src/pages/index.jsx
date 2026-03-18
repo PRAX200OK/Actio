@@ -65,7 +65,7 @@ export default function Home() {
     },
     {
       title: 'Concepts',
-      description: 'Understand the sidecar, routing, domains, rules, and tasks.',
+      description: 'Sidecar layout: router, domains, rules, tasks, scripts, and manifest.',
       to: '/docs/concepts/sidecar',
     },
     {
@@ -81,6 +81,11 @@ export default function Home() {
       to: '/docs/concepts/index-yaml',
     },
     {
+      title: 'Scripts & manifest',
+      description: 'Put runnable scripts in `actio/scripts/`; maintain the single file `manifest.yaml`.',
+      to: '/docs/concepts/sidecar',
+    },
+    {
       title: 'Schema validation',
       description: 'Catch missing files, bad YAML, and broken references early.',
       to: '/docs/guides/schema-validation',
@@ -92,7 +97,7 @@ export default function Home() {
     },
     {
       title: 'MCP integration',
-      description: 'Expose Actio context to AI tools over stdio via `actio mcp`.',
+      description: 'Expose Actio context (and plug in other MCPs) via `actio mcp`.',
       to: '/docs/guides/mcp-integration',
     },
   ];

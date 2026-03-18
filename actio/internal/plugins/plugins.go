@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"actio/internal/actio"
 	"gopkg.in/yaml.v3"
@@ -54,10 +55,14 @@ func RunValidationPlugins(root string) ([]string, error) {
 		}
 
 		for _, rf := range p.RequiredFiles {
-			full := filepath.Join(root, rf)
+			full := filepath.Clean(filepath.Join(root, rf))
+			relToRoot, err := filepath.Rel(root, full)
+			if err != nil || relToRoot == ".." || strings.HasPrefix(relToRoot, ".."+string(filepath.Separator)) {
+				issues = append(issues, fmt.Sprintf("plugin %q: requiredFiles path escapes repo root: %s", p.Name, rf))
+				continue
+			}
 			if _, err := os.Stat(full); err != nil {
-				rel, _ := filepath.Rel(root, full)
-				issues = append(issues, fmt.Sprintf("plugin %q: missing required file: %s", p.Name, rel))
+				issues = append(issues, fmt.Sprintf("plugin %q: missing required file: %s", p.Name, relToRoot))
 			}
 		}
 	}

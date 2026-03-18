@@ -12,10 +12,14 @@ func ActioPath(parts ...string) string {
 // StandardFiles provides common Actio paths by logical key.
 // This makes it easy to reference core Actio files without repeating strings.
 var StandardFiles = map[string]string{
-	"index":       ActioPath(IndexFile),
+	"index":        ActioPath(IndexFile),
 	"architecture": ActioPath("architecture", "system.md"),
 	"interfaces":   ActioPath("interfaces", "contracts.yaml"),
 	"patterns":     ActioPath("patterns", "pattern.md"),
 	"rules":        ActioPath("rules", "rules.md"),
-	"tasks":        ActioPath("tasks", "task.md"),
+	"tasks":             ActioPath("tasks", "task.md"),
+	"scripts_manifest":  ActioPath("scripts", "manifest.yaml"),
 }
+
+// ScriptsDir is the path to the scripts folder (for AI agent–runnable scripts).
+var ScriptsDir = ActioPath("scripts")

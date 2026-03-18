@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"actio/internal/actio"
 )
@@ -147,6 +148,7 @@ func listResources(root string) []map[string]any {
 		filepath.Join(root, actio.StandardFiles["interfaces"]),
 		filepath.Join(root, actio.StandardFiles["rules"]),
 		filepath.Join(root, actio.StandardFiles["tasks"]),
+		filepath.Join(root, actio.StandardFiles["scripts_manifest"]),
 	}
 
 	for _, p := range paths {
@@ -167,8 +169,21 @@ func readResource(root, uri string) (string, error) {
 	if uri == "" || len(uri) <= len(prefix) || uri[:len(prefix)] != prefix {
 		return "", fmt.Errorf("unsupported URI (expected actio://): %s", uri)
 	}
-	rel := uri[len(prefix):]
-	path := filepath.Join(root, filepath.FromSlash(rel))
+	rel := filepath.FromSlash(uri[len(prefix):])
+	path := filepath.Join(root, rel)
+	path = filepath.Clean(path)
+	rootAbs, err := filepath.Abs(root)
+	if err != nil {
+		return "", fmt.Errorf("unable to resolve root: %w", err)
+	}
+	pathAbs, err := filepath.Abs(path)
+	if err != nil {
+		return "", fmt.Errorf("unable to resolve path: %w", err)
+	}
+	relToRoot, err := filepath.Rel(rootAbs, pathAbs)
+	if err != nil || strings.HasPrefix(relToRoot, "..") {
+		return "", fmt.Errorf("unsupported URI (path escapes root): %s", uri)
+	}
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return "", fmt.Errorf("unable to read resource: %w", err)

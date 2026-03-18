@@ -16,15 +16,16 @@ func TestValidate_MissingActDir(t *testing.T) {
 	if len(issues) == 0 {
 		t.Fatal("expected issues when actio/ is missing")
 	}
+	expectedPath := filepath.Join("actio", "router.yaml")
 	var found bool
 	for _, s := range issues {
-		if s == "missing actio/router.yaml" {
+		if s == "missing "+expectedPath {
 			found = true
 			break
 		}
 	}
 	if !found {
-		t.Errorf("expected 'missing actio/router.yaml' in issues: %v", issues)
+		t.Errorf("expected 'missing %s' in issues: %v", expectedPath, issues)
 	}
 }
 
@@ -41,7 +42,7 @@ func TestValidate_InvalidYAML(t *testing.T) {
 	for _, d := range []string{"architecture", "interfaces", "rules", "tasks"} {
 		_ = os.MkdirAll(filepath.Join(actRoot, d), 0o755)
 	}
-	for _, f := range []string{"architecture/system.md", "rules/rules.md", "tasks/task.md"} {
+	for _, f := range []string{"architecture/system.md", "interfaces/contracts.yaml", "rules/rules.md", "tasks/task.md"} {
 		_ = os.WriteFile(filepath.Join(actRoot, f), []byte("x"), 0o644)
 	}
 

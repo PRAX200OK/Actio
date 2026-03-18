@@ -2,52 +2,77 @@
 
 Install the Actio CLI to create projects, validate sidecars, and run the MCP server.
 
-## Prerequisites
+## Option 1: Download from GitHub Releases (recommended)
 
-- **Go 1.22+** (to build from source)
-- Or use a pre-built binary when available
+Releases are built automatically via **GitHub Actions** and **GoReleaser** when a version tag (e.g. `v0.1.0`) is pushed. Pre-built binaries are published on the [Releases](https://github.com/PRAX200OK/Actio/releases) page.
 
-## Build from source
+### Supported platforms
 
-Clone the repository and build the `actio` binary:
+| OS      | Architectures | Archive   |
+|---------|---------------|-----------|
+| Windows | amd64, arm64  | `.zip`    |
+| Linux   | amd64, arm64  | `.tar.gz` |
+| macOS   | amd64, arm64  | `.tar.gz` |
 
-```bash
-git clone https://github.com/PRAX200OK/actio.git
-cd actio
-go build -o actio ./actio
-```
+### Steps
 
-Optionally, move the binary into your `PATH`:
+1. Open [github.com/PRAX200OK/Actio/releases](https://github.com/PRAX200OK/Actio/releases) and download the archive for your OS and architecture (e.g. `actio_Windows_x86_64.zip` or `actio_Linux_arm64.tar.gz`).
 
-```bash
-sudo mv actio /usr/local/bin/
-# or
-export PATH="$PATH:$(pwd)"
-```
+2. Extract the archive:
+   - **Windows (.zip):** Unzip and you’ll get `actio.exe` (and optionally `setup.bat`, `setup.sh`).
+   - **Linux / macOS (.tar.gz):**  
+     `tar -xzf actio_<OS>_<arch>.tar.gz`
 
-Verify:
+3. Put the `actio` (or `actio.exe`) binary in your `PATH`, for example:
+   - **Windows:** Move `actio.exe` to a folder that’s on your PATH, or add the folder to your user PATH.
+   - **Linux / macOS:**  
+     `sudo mv actio /usr/local/bin/`  
+     or  
+     `export PATH="$PATH:$(pwd)"`
 
-```bash
-actio --help
-```
+4. Verify:
 
-You should see:
+   ```bash
+   actio version
+   actio --help
+   ```
 
-```
-Actio is an AI-sidecar framework that provides structured context
-to AI coding agents to reduce hallucinations and enforce architecture rules.
+## Option 2: Build from source
 
-Usage:
-  actio [command]
+You need **Go 1.22+** installed.
 
-Available Commands:
-  create      Create a new project with Actio sidecar
-  doctor      Check Actio project health and print issues
-  init        Initialize Actio sidecar in an existing repository
-  mcp         Start an MCP-compatible server exposing Actio context
-  validate    Validate Actio sidecar structure and configuration
-  ...
-```
+1. Clone the repository and build:
+
+   ```bash
+   git clone https://github.com/PRAX200OK/Actio.git
+   cd Actio/actio
+   go build -o actio .
+   ```
+
+   On Windows the binary will be `actio.exe`.
+
+2. (Optional) Move the binary into your `PATH`:
+
+   ```bash
+   # Linux / macOS
+   sudo mv actio /usr/local/bin/
+
+   # Or add current directory to PATH
+   export PATH="$PATH:$(pwd)"
+   ```
+
+3. Verify:
+
+   ```bash
+   actio version
+   actio --help
+   ```
+
+## How releases are published
+
+- The project uses **GoReleaser** (see [.goreleaser.yml](https://github.com/PRAX200OK/Actio/blob/main/.goreleaser.yml) in the repo).
+- When maintainers push a **version tag** (e.g. `v0.1.0`), the **CI** workflow runs tests and then **GoReleaser** builds binaries for all supported OS/arch combinations and publishes them to the [GitHub Releases](https://github.com/PRAX200OK/Actio/releases) page.
+- The docs site is deployed separately via **GitHub Actions** (GitHub Pages) on push to `main`/`master`.
 
 ## Next
 

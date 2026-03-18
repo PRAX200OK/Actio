@@ -16,7 +16,7 @@ actio mcp
 
 ### mcp.listResources
 
-Returns a list of Actio resources (e.g. `index.yaml`, architecture, interfaces, rules, task guides) that exist under `actio/`.
+Returns a list of Actio resources (e.g. `router.yaml`, architecture, interfaces, rules, task guides, scripts) that exist under `actio/`.
 
 **Request:**
 
@@ -33,7 +33,7 @@ Returns the content of a resource by its `actio://` URI.
 **Request:**
 
 ```json
-{"jsonrpc":"2.0","id":2,"method":"mcp.readResource","params":{"uri":"actio://actio/index.yaml"}}
+{"jsonrpc":"2.0","id":2,"method":"mcp.readResource","params":{"uri":"actio://actio/router.yaml"}}
 ```
 
 **Response:** `result.content` is the file contents (string).
@@ -42,9 +42,10 @@ Returns the content of a resource by its `actio://` URI.
 
 Resources use the scheme **actio://** and paths relative to the project root, e.g.:
 
-- `actio://actio/index.yaml`
+- `actio://actio/router.yaml`
 - `actio://actio/architecture/system.md`
 - `actio://actio/rules/rules.md`
+- `actio://actio/scripts/manifest.yaml` (scripts manifest: single maintained file — declarative list and usage)
 
 ## Example (shell)
 

@@ -82,14 +82,68 @@ func RulesCodingMD() string {
 }
 
 func TasksExampleMD() string {
-	return fmt.Sprintf("# Example Task - Add New Connector\n\n" +
-		"1. Read `%s` to understand the existing domains.\n" +
-		"2. Define a new contract in `%s` if needed.\n" +
-		"3. Document any patterns in `%s`.\n" +
+	return fmt.Sprintf("# Example Task - Add New Connector\n\n"+
+		"1. Read `%s` to understand the existing domains.\n"+
+		"2. Define a new contract in `%s` if needed.\n"+
+		"3. Document any patterns in `%s`.\n"+
 		"4. Ensure changes comply with rules in `%s`.\n",
 		actio.StandardFiles["architecture"],
 		actio.StandardFiles["interfaces"],
 		actio.ActioPath("patterns"),
 		actio.StandardFiles["rules"])
+}
+
+// ScriptsManifestYAML returns the content for actio/scripts/manifest.yaml.
+// Single maintained file in scripts/: declarative list of runnable scripts plus folder usage.
+// Paths are relative to the repository root. Add script entries here when you add new scripts.
+const ScriptsManifestYAML = `# actio/scripts/ — single manifest for AI-runnable scripts
+# This folder holds scripts the agent can execute. Maintain only this file (manifest.yaml).
+# - Python (.py) is the default; add shell (.sh), PowerShell (.ps1), or batch (.bat) as needed; list them below.
+# - Agent runs these via the terminal when a task requires it.
+# - Keep scripts small, documented, and idempotent where possible.
+# - Do not put secrets in scripts; use environment variables or a secrets manager.
+
+version: 1
+description: |
+  Scripts in actio/scripts/ that can be run from the repo root.
+  Use this manifest to discover script paths, descriptions, and usage.
+
+scripts:
+  - name: example
+    path: actio/scripts/example.py
+    description: Example script; confirms the scripts folder is set up.
+    usage: Run from repo root: python actio/scripts/example.py (or python3). No arguments. Safe to run anytime.
+    when_to_use: When verifying the Actio scripts setup or as a template for new scripts.
+`
+
+// ExampleScriptPy returns a minimal example script in Python (default for scripts folder).
+const ExampleScriptPy = `#!/usr/bin/env python3
+"""Example script – safe for the AI agent to run.
+Replace with real automation (e.g. build, lint, codegen)."""
+import sys
+
+def main() -> None:
+    print("Actio scripts folder is ready. Add your automation here.")
+    sys.exit(0)
+
+if __name__ == "__main__":
+    main()
+`
+
+// ActioPluginsReadmeMD returns the content for actio/plugins/README.md (full preset only).
+func ActioPluginsReadmeMD() string {
+	return "# Validation plugins\n\n" +
+		"Add YAML files here to extend `actio validate` with extra checks.\n\n" +
+		"Each file defines a plugin with optional **requiredFiles**. Validation will fail if those files are missing.\n" +
+		"See the [plugins guide](https://PRAX200OK.github.io/Actio/docs/guides/plugins) for schema and examples.\n"
+}
+
+// MCPPluginsReadmeMD returns the content for mcp/plugins/README.md (full preset only).
+func MCPPluginsReadmeMD() string {
+	return "# MCP plugin configs\n\n" +
+		"Add YAML or JSON files here to plug third-party MCP servers into `actio mcp`.\n\n" +
+		"Each file describes how to start one MCP process (command, args, optional env). " +
+		"Actio will aggregate their resources under `plugin://` alongside built-in `actio://` resources.\n" +
+		"See the [MCP integration guide](https://PRAX200OK.github.io/Actio/docs/guides/mcp-integration) for details.\n"
 }
 
